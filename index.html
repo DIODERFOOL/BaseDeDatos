@@ -7,6 +7,9 @@
     <link href="css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 
+    <!-- <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/store.everything.min.js"></script>    --> 
+
 
     <title>Login</title>
 </head>
@@ -21,17 +24,67 @@
 
       <!--  <h4 id="text">Username:</h4> --> 
 
-       <input type="text" requiered placeholder="Usuario" name="username" id="inp">
+       <input type="text" requiered placeholder="Usuario" name="username" id="username" class="inp">
 
        <!-- <h4 id="text">Password:</h4>  -->
 
-       <input type="password" requiered placeholder="Contraseña" name="password" id="inp">
+       <input type="password" requiered placeholder="Contraseña" name="password" id="PW" class="inp">
 
        <br/>
 
         <input id="button" type="submit" value="Submit" >
 
     </form>
+
+    <span class="login-error"></span>
+
+    <!-- <script>
+            
+           $('#button').on('click', function(){
+                 //Validation
+
+                error=false;
+
+                if($('#username').val()==''){
+                    $('#username').css('border-bottom', '3px solid #443742');
+                    error=true;
+                }
+                if($('#PW').val()==''){
+                    $('#PW').css('border-bottom', '3px solid #443742');
+                    error=true;
+                }
+                if(error){
+                    $('.login-error').text('Wrong username or password');
+                    $('.login-error').fadeIn().css('display', 'block').delay(1000).fadeOut();
+                    return false;
+                }
+
+                //No error found, continue, check if combo user-password exists
+
+                for(var i=1;i<=store.get('tot-users');i++){
+                    if($('#username').val()== store.get('user-'+i).username && $('#PW').val()==store.get('user-'+i).password){
+
+                        //Correct login, update user and go to users page:
+                        store.set('logged-in-user', $('#username').val());
+
+                        $('app.html').fadeOut().delay(400);
+                            location.replace("register.html");
+                            return false;
+                    }
+                }
+
+                //If we get here it means that we don´t have any errors but the user/pwd don´t exist
+               $('.login-error').text('Wrong username or password');
+                $('.login-error').fadeIn().css('display', 'block').delay(1000).fadeOut();
+                return false;
+               
+            });
+        
+        
+        </script> -->
+
+
+
 </body>
 
 </html>
