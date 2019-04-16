@@ -38,27 +38,33 @@ public class RegisterServletDBG extends HttpServlet{
 			//------User register STARTS------
 
 	
-			// String name = request.getParameter("addName");
-			// String username = request.getParameter("addUser");
-			// String password = request.getParameter("addPW");
+			String name = request.getParameter("addName");
+			String username = request.getParameter("addUser");
+			String password = request.getParameter("addPW");
 
-			// ResultSet res2 = stat.executeQuery("SELECT * FROM register;");
-			// Vector<User> userList = new Vector<User>();
+			System.out.println("Llegamos hasta el checkpoint 1 lol");
 
-			// while(res2.next()){
-			// 	User aux = new User(res2.getString("name"), res.getString("username"), res.getString("password"));
-			// 	userList.add(aux);
-			// }
+			int res = stat.executeUpdate("insert into users(name, username, password) VALUES (\"" + name + "\", \"" + username + "\", \"" + password + "\");");
+
+			System.out.println("Salu2 llegamos al final :)");
+
+			ResultSet res2 = stat.executeQuery("SELECT * FROM users;");
+			Vector<User> userList = new Vector<User>();
+
+			while(res2.next()){
+				User aux = new User(res2.getString("name"), res2.getString("username"), res2.getString("password"));
+				userList.add(aux);
+			}
 
 			stat.close();
 			con.close();
 
-			// request.setAttribute("userList",userList);
-			// RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredUsers.jsp");
+			request.setAttribute("userList",userList);
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredUsers.jsp");
 
-			// if(disp!=null){
-			// 	disp.forward(request,response);
-			// }
+			if(disp!=null){
+				disp.forward(request,response);
+			}
 		}
 		catch(Exception e){
 			e.printStackTrace();
