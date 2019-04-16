@@ -4,7 +4,7 @@ import javax.servlet.http.*;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/CrearEmpresaServlet")
+@WebServlet("./CrearEmpresaServlet")
 public class CrearEmpresaServlet extends HttpServlet{
 
 	public void init(ServletConfig config){
