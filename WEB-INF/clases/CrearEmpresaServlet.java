@@ -25,9 +25,9 @@ public class CrearEmpresaServlet extends HttpServlet{
 			response.setContentType("text/html");
 			PrintWriter pw = response.getWriter();
 
-			request.setAttribute("request", nombre);
-			request.setAttribute("request", contacto);
-			request.setAttribute("request", forma);
+			request.setAttribute("response", nombre);
+			request.setAttribute("response", contacto);
+			request.setAttribute("response", forma);
 
 			RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/showPruebas.jsp");
 
