@@ -1,4 +1,4 @@
-//DB Connection
+//import sql library
 import java.sql.*;
 
 public class DBConnection{
@@ -10,17 +10,18 @@ public class DBConnection{
 			String url = "jdbc:mysql://localhost/proyect";
             Connection con = DriverManager.getConnection(url,"root", "ThetaOmegaSigma1234!");
             //Create statement
-            Statemente stat = con.createStatement();
+            Statement stat = con.createStatement();
 
             //INSERT INTO [table] ([column], [column]) VALUES ('[value]', [value]');	
             //stat.executeUpdate("INSERT INTO user ();");
 
-            ResultSet res = stat.executeQuery("SELECT nombre,tipo FROM user;");
+            /*ResultSet res = stat.executeQuery("SELECT * FROM empresa;");
             while(res.next()){
                 String nombre = res.getString("nombre");
                 Sting tipo = res.getString(2);
                 System.out.println(nombre + "   -   " + tipo);
-            }
+            }*/
+
 
 			//Close connection
             stat.close();
