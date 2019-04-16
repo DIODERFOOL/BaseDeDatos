@@ -21,7 +21,7 @@ public class CrearEmpresaServlet extends HttpServlet{
 		try{
 			String nombre = request.getParameter("addName");
 			String contacto = request.getParameter("addContacto");
-			String foma = request.getParameter("addForma");
+			String forma = request.getParameter("addForma");
 
 			response.setContentType("text/html");
 			PrintWriter pw = response.getWriter();
