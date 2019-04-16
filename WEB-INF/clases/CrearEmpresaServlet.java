@@ -4,7 +4,7 @@ import javax.servlet.http.*;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("./CrearEmpresaServlet")
+@WebServlet("/CrearEmpresaServlet")
 public class CrearEmpresaServlet extends HttpServlet{
 
 	public void init(ServletConfig config){
@@ -13,7 +13,6 @@ public class CrearEmpresaServlet extends HttpServlet{
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response){
@@ -26,9 +25,9 @@ public class CrearEmpresaServlet extends HttpServlet{
 			response.setContentType("text/html");
 			PrintWriter pw = response.getWriter();
 
-			request.setAttribute("nombre", nombre);
-			request.setAttribute("contacto", contacto);
-			request.setAttribute("forma", forma);
+			request.setAttribute("request", nombre);
+			request.setAttribute("request", contacto);
+			request.setAttribute("request", forma);
 
 			RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/showPruebas.jsp");
 
