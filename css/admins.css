@@ -95,7 +95,7 @@ h1{
 
 #clientes{
 	width: 30%;
-	height: 100%;
+	height: 98.7%;
 	background-color: white;
 	position: left;
 	border: 5px solid #898E92;
@@ -111,7 +111,7 @@ h1{
 	background-color: white;
 	position: absolute;
 	border: 5px solid #898E92;
-    border-radius: 10px;
+    border-radius: 5px;
     color: black;
 	right: 0%;
 	top: 0%;
@@ -119,7 +119,7 @@ h1{
 
 #juicios{
 	width: 68.55%;
-	height: 50%;
+	height: 48.7%;
 	background-color: white;
 	position: absolute;
 	border: 5px solid #898E92;
