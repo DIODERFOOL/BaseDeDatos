@@ -18,7 +18,10 @@
             <p>Crear Empleado</p>
             <input type="text" required placeholder="Nombre" class="inp" id="addName">
             <input type="text" required placeholder="Contacto" class="inp" id="addContacto">
-            <input type="text" placeholder="Forma Jurídica" class="inp" id="addForma">
+            <select class="inp" id="addForma">
+                <option value="Empleado">Empleado</option>
+                <option value="Súper Empleado">Súper Empleado</option>
+            </select>
             <input type="submit" value="Registrar" id="button">
         </form>
         <div class="reg-error"></div>
