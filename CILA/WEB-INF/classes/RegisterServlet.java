@@ -57,8 +57,8 @@ public class RegisterServlet extends HttpServlet{
 			// 	userList.add(aux);
 			// }
 
-			// stat.close();
-			// con.close();
+			stat.close();
+			con.close();
 
 			// //------User register ENDS------
 
