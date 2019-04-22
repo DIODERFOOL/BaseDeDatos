@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/RegisterUserDEBUG")
-public class RegisterServletDBG extends HttpServlet{
+@WebServlet("/RegisterUser")
+public class RegisterServlet extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -20,7 +20,7 @@ public class RegisterServletDBG extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 
 		try{
-			System.out.println("INICIO");
+
 			//------Connection to mySQL setup STARTS-------
 			//credentials
 			String dbbase = getServletContext().getInitParameter("base");
@@ -37,41 +37,48 @@ public class RegisterServletDBG extends HttpServlet{
 
 			//------User register STARTS------
 
-	
+			//retrieve values from register's forms
 			String name = request.getParameter("addName");
 			String username = request.getParameter("addUser");
 			String password = request.getParameter("addPW");
 
-			System.out.println("Llegamos hasta el checkpoint 1 lol");
-
+			//save values in database
 			int res = stat.executeUpdate("insert into users(name, username, password) VALUES (\"" + name + "\", \"" + username + "\", \"" + password + "\");");
 
-			System.out.println("Salu2 llegamos al final :)");
+			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
-			ResultSet res2 = stat.executeQuery("SELECT * FROM users;");
-			Vector<User> userList = new Vector<User>();
 
-			while(res2.next()){
-				User aux = new User(res2.getString("name"), res2.getString("username"), res2.getString("password"));
-				userList.add(aux);
-			}
+			// ResultSet res2 = stat.executeQuery("SELECT * FROM users;");
+			// Vector<User> userList = new Vector<User>();
 
-			stat.close();
-			con.close();
+			// while(res2.next()){
+			// 	User aux = new User(res2.getString("name"), res2.getString("username"), res2.getString("password"));
+			// 	userList.add(aux);
+			// }
 
-			request.setAttribute("userList",userList);
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredUsers.jsp");
+			// stat.close();
+			// con.close();
 
-			if(disp!=null){
-				disp.forward(request,response);
-			}
+			// //------User register ENDS------
+
+			// //------JSP call forward BEGINS------
+
+			// request.setAttribute("userList",userList);
+			// RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredUsers.jsp");
+
+			// if(disp!=null){
+			// 	disp.forward(request,response);
+			// }
+			//------JSP call forward ENDS ------
+
+
+			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
+
+			response.sendRedirect("./index.html?userRegister=1");
+
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}
-		finally{
-			// stat.close();
-			// con.close();
 		}
 	}
 }
