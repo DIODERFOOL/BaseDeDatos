@@ -27,7 +27,7 @@
 		usuario
 	</param-name> 
 	<param-value>
-		admin
+		finley
 	</param-value> 
 </context-param>
 
@@ -39,7 +39,7 @@
 		pass
 	</param-name> 
 	<param-value>
-		%access%
+		password
 	</param-value> 
 </context-param>
 
@@ -51,7 +51,7 @@
 		base
 	</param-name> 
 	<param-value>
-		usersDB
+		abogados
 	</param-value> 
 </context-param> 
 

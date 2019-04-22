@@ -43,35 +43,39 @@ public class RegisterServlet extends HttpServlet{
 			String password = request.getParameter("addPW");
 
 			//save values in database
-			ResultSet res = stat.executeQuery("insert into register VALUES (\"" + name + "\", \"" + username + "\", \"" + password + "\");");
+			int res = stat.executeUpdate("insert into users(name, username, password) VALUES (\"" + name + "\", \"" + username + "\", \"" + password + "\");");
 
-			//FOR DEBUGGING PURPOSES, EXECUTE A SEARCH OF ALL REGISTERED USERS THUS FAR
+			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
-			ResultSet res2 = stat.executeQuery("SELECT * FROM register;");
-			Vector<User> userList = new Vector<User>();
 
-			while(res2.next()){
-				User aux = new User(res2.getString("name"), res.getString("username"), res.getString("password"));
-				// aux.setName(res2.getString("name"));
-				// aux.setUsername(res.getString("username"));
-				// aux.setPassword(res.getString("password"));
-				userList.add(aux);
-			}
+			// ResultSet res2 = stat.executeQuery("SELECT * FROM users;");
+			// Vector<User> userList = new Vector<User>();
 
-			stat.close();
-			con.close();
+			// while(res2.next()){
+			// 	User aux = new User(res2.getString("name"), res2.getString("username"), res2.getString("password"));
+			// 	userList.add(aux);
+			// }
 
-			//------User register ENDS------
+			// stat.close();
+			// con.close();
 
-			//------JSP call forward BEGINS------
+			// //------User register ENDS------
 
-			request.setAttribute("userList",userList);
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredUsers.jsp");
+			// //------JSP call forward BEGINS------
 
-			if(disp!=null){
-				disp.forward(request,response);
-			}
+			// request.setAttribute("userList",userList);
+			// RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredUsers.jsp");
+
+			// if(disp!=null){
+			// 	disp.forward(request,response);
+			// }
 			//------JSP call forward ENDS ------
+
+
+			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
+
+			response.sendRedirect("./index.html?userRegister=1");
+
 		}
 		catch(Exception e){
 			e.printStackTrace();
