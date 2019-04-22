@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pruebas Conexión BD</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/regstyle2.css" rel ="stylesheet">
+</head>
+<body>
+	<header>
+		<h1>Corporativo Integral López Asociados, S.C.</h1>
+        <a href="admins.html"><img src="img/left_Arrow.png" id="backArrow"></a>
+	</header>
+
+    <section id="start">
+        <form id="form" action="./CrearEmpresaServlet" method="get">
+        	<p>Crear Empresa</p>
+            <input type="text" required placeholder="Nombre" class="inp" id="addName">
+            <input type="text" required placeholder="Contacto" class="inp" id="addContacto">
+            <input type="text" placeholder="Forma Jurídica" class="inp" id="addForma">
+            <input type="submit" value="Crear Empresa" id="button">
+        </form>
+    	<div class="reg-error"></div>
+    </section>
+</body>
+</html>

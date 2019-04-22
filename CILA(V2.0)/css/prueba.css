@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+#Saludos{
+	width: auto;
+	height: 50px;
+	background-color: yellow;
+	display: block;
+	text-align: center;
+}

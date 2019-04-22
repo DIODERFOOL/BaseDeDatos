@@ -1,0 +1,155 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, img {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*****************/
+/*****************/
+/******STYLES*****/
+/*****************/
+/*****************/
+
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    color: #272635;
+    position: fixed;
+    background-color: white;
+    text-align: center;
+}
+
+header{
+    position: fixed;
+    background-color: green;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+}
+
+h1{
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.reg{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 75%;
+}
+
+#start{
+    position: inherit;
+    width: 100%;
+    height: 84.99%;
+    bottom: 0;
+}
+
+form{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    padding: 50px;
+    border: 1px solid #898E92;
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.inp{
+    width: 100%;
+    height: 40px;
+    padding: 10px 10px;
+    margin: 5px 0px;
+    background-color: transparent;
+    border: 1px solid #898E92;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+}
+
+#button{
+    background-color: #47525E;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    border-color: #47525E;
+    border-radius: 9px;
+    height: 50px;
+    width: 101%;
+    color: white;
+}
+
+#button:hover{
+	background: transparent;
+	color: #a0a0a0;
+	/*box-shadow: inset 0 0 0 3px #eaeaea;*/
+}
+
+#backArrow{
+    height: 25%;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.reg-error{
+	margin-top: 25px;
+	text-align: center;
+	color: darkred;
+	font-size: 20px;
+}
+
+
+
+
