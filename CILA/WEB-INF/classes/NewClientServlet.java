@@ -49,7 +49,7 @@ public class NewClientServlet extends HttpServlet{
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
 
-			ResultSet res2 = stat.executeQuery("SELECT * FROM users;");
+			ResultSet res2 = stat.executeQuery("SELECT * FROM client;");
 			Vector<Client> clientList = new Vector<Client>();
 
 			while(res2.next()){
@@ -65,7 +65,7 @@ public class NewClientServlet extends HttpServlet{
 			// //------JSP call forward BEGINS------
 
 			request.setAttribute("clientList",clientList);
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredUsers.jsp");
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredClients.jsp");
 
 			if(disp!=null){
 				disp.forward(request,response);
