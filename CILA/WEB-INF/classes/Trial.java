@@ -1,11 +1,11 @@
 public class Trial{
-
-	public String address;
-	public String date;
+	
+	private String address;
+	private String date;
 
 	public Trial(String address, String date){
-		this.address= address;
-		this.date=date;
+		this.address = address;
+		this.date = date;
 	}
 
 	public void setAddress(String address){
@@ -23,6 +23,5 @@ public class Trial{
 	public String getDate(){
 		return date;
 	}
-
 
 }
