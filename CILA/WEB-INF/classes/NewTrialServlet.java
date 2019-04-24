@@ -39,7 +39,7 @@ public class NewTrialServlet extends HttpServlet{
 
 			//retrieve values from register's forms
 			String address = request.getParameter("addAddress");
-			String date = requestParameter("addDate");
+			String date = request.getParameter("addDate");
 
 			//save values in the database
 			int res = stat.executeUpdate("insert into file(address, date) VALUES (\"" + address + "\", \"" + date + "\");");
@@ -47,7 +47,7 @@ public class NewTrialServlet extends HttpServlet{
 			//!!!!!!---------   DEBUGGING - For class presentation only - Creating a JSP with all registered users example !!!!!!---------
 
 			ResultSet res2 = stat.executeQuery("SELECT * FROM file;");
-			Vector<Trial> fileList = new Vector<Trial>();
+			Vector<Trial> trialList = new Vector<Trial>();
 
 			while(res2.next()){
 				//Corregir formato de la fecha para impresión en el jsp
@@ -57,8 +57,8 @@ public class NewTrialServlet extends HttpServlet{
 				String month = reformatDate.substring(5,7);
 				String year =  reformatDate.substring(0,4);
 				reformatDate = day + "/" + month + "/" + year;
-				File aux = new File(res2.getString("name"), reformatDate);
-				fileList.add(aux);
+				Trial aux = new Trial(res2.getString("name"), reformatDate);
+				trialList.add(aux);
 			}
 
 			stat.close();
