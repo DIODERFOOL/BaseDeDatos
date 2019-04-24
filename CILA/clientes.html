@@ -13,10 +13,10 @@
 	</header>
 
     <section id="start">
-        <form id="form" action="./CrearEmpresaServlet" method="get">
+        <form id="form" action="./RegisterClient" method="post">
         	<p>Crear Clientes</p>
-            <input type="text" required placeholder="Nombre" class="inp" id="addName">
-            <input type="text" required placeholder="Contacto" class="inp" id="addContacto">
+            <input type="text" required placeholder="Nombre" class="inp" name="ClientName" id="addName">
+            <input type="text" required placeholder="Contacto" class="inp" name="ClientContact" id="addContacto">
             <!-- <input type="text" placeholder="Forma Jurídica" class="inp" id="addForma"> -->
             <input type="submit" value="Crear Cliente" id="button">
         </form>
