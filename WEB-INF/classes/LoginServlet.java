@@ -137,7 +137,7 @@ public class LoginServlet extends HttpServlet{
 						else if(userList.get(i).getRole().equals("Empleado")){
 							//Empleado regular Login
 							loginSuccess = true;
-							RequestDispatcher disp = getServletContext().getRequestDispatcher("/empleados.html");
+							RequestDispatcher disp = getServletContext().getRequestDispatcher("/empleados.jsp");
 							if(disp!=null){
 								disp.forward(request,response);
 							}

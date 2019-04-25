@@ -127,3 +127,12 @@ h1{
 	right: 0%;
 	top: 50%;
 }
+
+/*--------------Centro-------------------*/
+
+#clientesTable1, #clientesTable2{
+	width: 50%;
+	float: left;
+}
+
+
