@@ -29,7 +29,7 @@
 	<header>
 		<h1 id="headerAdmin">Corporativo Integral López Asociados, S.C.</h1>
 	</header>
-	
+
 	<div id="wrapper">
 
 		<div id="leftMenu">
@@ -252,7 +252,7 @@
 </body>
 <script>
 	currentTime();
-	
+
 	function currentTime(){
 		var today = new Date();
 		var date = today.getDate() + ' de ' + today.toLocaleString('es-us', { month: 'long' }) + ' del ' + today.getFullYear();
@@ -267,6 +267,9 @@
 	  return i;
 	}
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> Confirmaciones
 </script>
 </html>

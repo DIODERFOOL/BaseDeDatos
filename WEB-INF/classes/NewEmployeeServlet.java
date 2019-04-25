@@ -14,7 +14,7 @@ public class NewEmployeeServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
@@ -46,14 +46,16 @@ public class NewEmployeeServlet extends HttpServlet{
 			String admissionDate = request.getParameter("addAdmisDate");
 			String contractCode = request.getParameter("addContractCode");
 			String role = request.getParameter("addForma");
+			int idTRial = 3;
+			int company_id = 3;
 
 			//save values in database
-			int res = stat.executeUpdate("insert into employee(name, salary, settlement, admission_date, contractCode, company_role) VALUES (\"" + name + "\", \"" + salary + "\", \"" + settlement + "\", \"" + admissionDate + "\" , \"" + contractCode + "\" , \"" + role + "\");");
+			int res = stat.executeUpdate("insert into employee(name, salary, settlement, admission_date, contractCode, company_role, idTrial, company_id) VALUES (\"" + name + "\", \"" + salary + "\", \"" + settlement + "\", \"" + admissionDate + "\" , \"" + contractCode + "\" , \"" + role + "\",  \"" + idTRial + "\",  \"" + company_id + "\");");
 
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
 
-			ResultSet res2 = stat.executeQuery("SELECT * FROM employee;");
+			ResultSet res2 = stat.executeQuery("SELECT * FROM employee ORDER BY Employee_Id DESC LIMIT 1;");
 			Vector<Employee> employeeList = new Vector<Employee>();
 
 			while(res2.next()){
@@ -77,7 +79,7 @@ public class NewEmployeeServlet extends HttpServlet{
 			// //------JSP call forward BEGINS------
 
 			request.setAttribute("employeeList",employeeList);
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredEmployee.jsp");
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/confirmacionEmpleado.jsp");
 
 			if(disp!=null){
 				disp.forward(request,response);

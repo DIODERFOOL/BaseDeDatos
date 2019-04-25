@@ -14,7 +14,7 @@ public class NewClientServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
@@ -40,7 +40,7 @@ public class NewClientServlet extends HttpServlet{
 			//retrieve values from register's forms
 			String name = request.getParameter("ClientName");
 			String contact = request.getParameter("ClientContact");
-			long userID = Long.parseLong(request.getParameter("userID"));
+			long userID = 4;
 			// String password = request.getParameter("addPW");
 			// String role = request.getParameter("addForma");
 
@@ -50,11 +50,11 @@ public class NewClientServlet extends HttpServlet{
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
 
-			ResultSet res2 = stat.executeQuery("SELECT * FROM client;");
+			ResultSet res2 = stat.executeQuery("SELECT * FROM client ORDER BY companyID DESC LIMIT 1;");
 			Vector<Client> clientList = new Vector<Client>();
 
 			while(res2.next()){
-				Client aux = new Client(res2.getLong("companyID"),res2.getString("name"), res2.getString("contact"), res2.getLong("userID"));
+				Client aux = new Client(res2.getLong("companyID"),res2.getString("name"), res2.getString("contact"), res2.getLong("id_User"));
 				clientList.add(aux);
 			}
 
@@ -66,7 +66,7 @@ public class NewClientServlet extends HttpServlet{
 			// //------JSP call forward BEGINS------
 
 			request.setAttribute("clientList",clientList);
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredClients.jsp");
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/confirmacionCliente.jsp");
 
 			if(disp!=null){
 				disp.forward(request,response);

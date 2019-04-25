@@ -4,10 +4,11 @@ public class Lawsuit {
 	private String adress;
 	private int trial_id;
 
-	public Lawsuit(String name, String affair, String adress) {
+	public Lawsuit(String name, String affair, String adress, int trial_id) {
 		this.name = name;
 		this.affair = affair;
 		this.adress = adress;
+		this.trial_id = trial_id;
 	}
 
 	public void setName(String name){
@@ -32,5 +33,13 @@ public class Lawsuit {
 
 	public String getAdress(){
 		return adress;
+	}
+
+	public void setTrialId(int trial_id) {
+		this.trial_id = trial_id;
+	}
+
+	public int getTrialId() {
+		return trial_id;
 	}
 }

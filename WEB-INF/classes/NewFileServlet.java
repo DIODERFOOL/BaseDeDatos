@@ -14,7 +14,7 @@ public class NewFileServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
@@ -40,14 +40,15 @@ public class NewFileServlet extends HttpServlet{
 			//retrieve values from register's forms
 			String name = request.getParameter("addName");
 			String date = request.getParameter("addContacto");
+			int lawsuit_id = 3;
 
 			//save values in database
-			int res = stat.executeUpdate("insert into file(name, creation_date) VALUES (\"" + name + "\", \"" + date + "\");");
+			int res = stat.executeUpdate("insert into file(name, creation_date, lawsuit_id) VALUES (\"" + name + "\", \"" + date + "\", \"" + lawsuit_id + "\");");
 
 			//!!!!!!---------   DEBUGGING - For class presentation only - Creating a JSP with all registered users example !!!!!!---------
 
 
-			ResultSet res2 = stat.executeQuery("SELECT * FROM file;");
+			ResultSet res2 = stat.executeQuery("SELECT * FROM file ORDER BY idFile DESC LIMIT 1;");
 			Vector<File> fileList = new Vector<File>();
 
 			while(res2.next()){
@@ -73,7 +74,7 @@ public class NewFileServlet extends HttpServlet{
 
 
 
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredFiles.jsp");
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/confirmacionArchivo.jsp");
 			if(disp!=null){
 				disp.forward(request,response);
 			}

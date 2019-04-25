@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -13,8 +13,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
     margin: 0;
@@ -25,7 +25,7 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, img {
     display: block;
 }
@@ -104,7 +104,11 @@ h1{
 form, #forTables{
     position: absolute;
     width: 300px;
+<<<<<<< HEAD
     height: auto;
+=======
+    height: 300px;
+>>>>>>> Confirmaciones
     padding: 50px;
     border: 1px solid #898E92;
     border-radius: 10px;
@@ -152,7 +156,7 @@ form, #forTables{
     height: 50px;
     width: 101%;
     color: white;
-    margin-top: 10%; 
+    margin-top: 10%;
 }
 
 #button:hover{
@@ -174,6 +178,14 @@ form, #forTables{
     text-align: center;
     color: darkred;
     font-size: 20px;
+}
+
+
+/*-----------------Cosas Alex View-------------------------------*/
+
+#forTables{
+    width: 500px;
+
 }
 
 
@@ -208,8 +220,3 @@ form, #forTables{
     float: left;
     display: block;
 }
-
-
-
-
-

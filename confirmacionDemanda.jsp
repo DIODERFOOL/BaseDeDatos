@@ -17,33 +17,33 @@
 
     <section id="start">
         <div id="forTables">
-            <table id="tableIDK" align="center">
+            <table id="tableIDK">
                 <tr>
-                    <th>name</th>
-                    <th>Username</th>
-                    <th>Rol</th>
+                    <th>Nombre</th>
+                    <th>Reclamo</th>
+                    <th>Dirección</th>
                 </tr>
-                <c:forEach items="${requestScope.userList}" var="us">
+                <c:forEach items="${requestScope.lawsuitList}" var="us">
                   <tr>
                     <td>
                       <c:out value="${us.name}" />
                     </td>
                     <td>
-                      <c:out value="${us.username}" />
+                      <c:out value="${us.affair}" />
                     </td>
                     <td>
-                      <c:out value="${us.role}" />
+                      <c:out value="${us.adress}" />
                     </td>
                   </tr>
                 </c:forEach>
             </table>
             <div id="divButts">
-                <a href="register.html" class="lowButt3">Crear Nuevo</a>
+                <a href="regLawsuit.html" class="lowButt3">Crear Nuevo</a>
                 <a href="#" class="lowButt3">Modificar</a>
                 <a href="admins.jsp" class="lowButt3">Regresar</a>
             </div>
-
         </div>
+
     </section>
 </body>
 </html>
