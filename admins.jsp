@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 
 <html>
 <head>
@@ -16,17 +17,21 @@
 	
 	<div id="wrapper">
 
-		<div id="rightMenu">
-			<div id="photo">
-				<img src="img/blank-avatar.jpg" id="avatar">
+		<div id="leftMenu">
+			<div id="clockSpace">
+				<!--<img src="img/blank-avatar.jpg" id="avatar">-->
+				<p>Bienvenido ${Nombre} <br><br> ¡Ojalá tengas un buen día!</p>
+
+				<!--<p id="clock"></p>-->
 			</div>
-			<div class="rightMenuTable">
+			<div class="leftMenuTable">
 				<ul id="uls">
-					<a href="regArchivo.html"><li>Crear Archivo</li></a>
-					<a href="regCaso.html"><li>Crear Caso</li></a>
+					<a href="registerEmployee.html"><li>Crear Empleado</li></a>
 					<a href="clientes.html"><li>Crear Cliente</li></a>
-					<a href="register.html"><li>Crear Empleado</li></a>
-					<a href="pruebasBD.html"><li>Crear Empresa</li></a>
+					<a href="regJuicio.html"><li>Crear Juicio</li></a>
+					<a href="pruebasBD.html"><li>Crear Demanda</li></a>
+					<a href="regArchivo.jsp"><li>Crear Archivo</li></a>
+					<!--<form method="post" action="./dropDownClient"> <input type="submit" name="regJuicio" value="Crear Juicio"> </form>-->
 				</ul>
 			</div>
 			
@@ -186,4 +191,21 @@
 
 	</div>
 </body>
+<script>
+	function startTime() {
+	  var today = new Date();
+	  var h = today.getHours();
+	  var m = today.getMinutes();
+	  var s = today.getSeconds();
+	  m = checkTime(m);
+	  s = checkTime(s);
+	  document.getElementById('clock').innerHTML =
+	  h + ":" + m + ":" + s;
+	  var t = setTimeout(startTime, 500);
+	}
+	function checkTime(i) {
+	  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+	  return i;
+	}
+</script>
 </html>
