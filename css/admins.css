@@ -166,7 +166,7 @@ p{
 	float: left;
 }
 
-#juicios{
+#empleados{
 	width: 65%;
 	height: 50%;
 	background-color: transparent;
@@ -178,7 +178,7 @@ p{
 
 /*---------------Derecha-----------------*/
 
-#empleados{
+#juicios{
 	width: 20%;
 	height: 100%;
 	background-color: transparent;
@@ -218,3 +218,6 @@ p{
     top: 50%;
     transform: translateY(-50%);
 }
+
+
+/*----------------Tables---------------------*/
