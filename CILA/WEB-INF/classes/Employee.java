@@ -84,7 +84,7 @@ public class Employee{
 
     public double getSettlement(){
         return settlement;
-    } 
+    }
 
     public void setCompanyID(long companyID){
         this.companyID = companyID;

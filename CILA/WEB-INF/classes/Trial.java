@@ -1,5 +1,5 @@
 public class Trial{
-	
+
 	private long trialID;
 	private String location;
 	private String trialDate;

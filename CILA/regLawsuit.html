@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Registro Demandas</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link href="css/regstyle2.css" rel ="stylesheet">
 </head>
@@ -14,12 +14,12 @@
     </header>
 
     <section id="start">
-        <form id="form" action="" method="get">
-            <p>Crear Caso</p>
-            <input type="text" required placeholder="Nombre" class="inp" id="addName">
-            <input type="text" required placeholder="Nombre de Cliente" class="inp" id="addContacto">
-            <input type="text" placeholder="Forma Jurídica" class="inp" id="addForma">
-            <input type="submit" value="Registrar" id="button">
+        <form id="form" action="./RegisterLawsuit" method="post">
+            <p>Crear Demanda</p>
+            <input type="text" required placeholder="Nombre" name="sName" class="inp" id="addName">
+            <input type="text" required placeholder="Reclamo" name="sReclamo" class="inp" id="addAffair">
+            <input type="text" placeholder="Dirección de la demana" name="sDireccion" class="inp" id="addForma">
+            <input type="submit" value="Crear Demanda" id="button">
         </form>
         <div class="reg-error"></div>
     </section>

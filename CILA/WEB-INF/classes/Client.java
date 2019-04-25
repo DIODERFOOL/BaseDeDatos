@@ -1,5 +1,5 @@
 public class Client{
-	
+
 	private long companyID;
 	private String name;
 	private String contact;
