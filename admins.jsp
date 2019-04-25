@@ -25,7 +25,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
-<body>
+<body onload="startTime()">
 	<header>
 		<h1 id="headerAdmin">Corporativo Integral López Asociados, S.C.</h1>
 	</header>
@@ -37,7 +37,7 @@
 				<!--<img src="img/blank-avatar.jpg" id="avatar">-->
 				<p>Bienvenido!</p><p>Son las:</p><p class="timeText"></p><p>del</p><p class="dateText"></p>
 
-				<!--<p id="clock"></p>-->
+				<!-- <p id="clock"></p> -->
 			</div>
 			<div class="leftMenuTable">
 				<ul id="uls">
@@ -256,10 +256,17 @@
 	function currentTime(){
 		var today = new Date();
 		var date = today.getDate() + ' de ' + today.toLocaleString('es-us', { month: 'long' }) + ' del ' + today.getFullYear();
-		var time = today.getHours() + ":" + today.getMinutes();
+		var time = checkTime(today.getHours()) + ":" + checkTime(today.getMinutes()) + ":" + checkTime(today.getSeconds());
 		$('.dateText').html(date);
 		$('.timeText').html(time);
+		var t = setTimeout(currentTime, 500);
 	}
+
+	function checkTime(i) {
+	  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+	  return i;
+	}
+
 	
 </script>
 </html>
