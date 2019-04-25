@@ -100,28 +100,30 @@ h1{
 	transform: translateX(-50%) translateY(-50%);
 }
 
-/*--------------Izquierda-------------------*/
-#empleados{
-	width: 30%;
-	height: 100%;
-	background-color: transparent; 
-	float: left;
-}
-
 /*---------------Centro--------------------*/
 
 #juicios{
-	width: 70%;
+	width: 80%;
 	height: 50%;
 	background-color: transparent;
-	float: left;
+	/*float: left;*/
+	position: absolute;
+	font-size: 20px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 #clientes{
-	width: 70%;
+	width: 80%;
 	height: 50%;
 	background-color: transparent;
-	float: left;
+	/*float: left;*/
+	position: absolute;
+	font-size: 20px;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 /*-------------Tables----------------*/

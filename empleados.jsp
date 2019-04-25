@@ -32,43 +32,7 @@
 	</header>
 	
 	<div id="wrapper">
-
-		<div id="empleados">
-			<h3>COMPAÑEROS EMPLEADOS</h3>
-			<div class="table100 ver3 m-b-110 floatingTable3">
-				<div class="table100-head">
-					<table>
-						<thead>
-							<tr class="row100 head">
-								<th class="cell100 column1">Fecha de Admisión</th>
-								<th class="cell100 column2">Rol en la Compañía</th>
-								<th class="cell100 column2">Nombre del Empleado</th>
-								<th class="cell100 column2">Salario</th>
-								<th class="cell100 column2">Código de Contrato</th>
-								<th class="cell100 column2">Finiquito</th>
-							</tr>
-						</thead>
-					</table>
-				</div>
-				<div class="table100-body js-pscroll">
-					<table>
-						<tbody>
-							<c:forEach items="${requestScope.employeeList}" var="em">
-		  					<tr class="row100 body">
-								<td class="cell100 column1"><c:out value="${em.admissionDate}" /></td>
-								<td class="cell100 column1"><c:out value="${em.companyRole}" /></td>
-								<td class="cell100 column1"><c:out value="${em.name}" /></td>
-								<td class="cell100 column1"><c:out value="${em.salary}" /></td>
-								<td class="cell100 column1"><c:out value="${em.contractCode}" /></td>
-								<td class="cell100 column1"><c:out value="${em.settlement}" /></td>
-							</tr>
-	  					</c:forEach>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-
+		
 		<div id="clientes">
 			<h3>CLIENTES</h3>
 			<div class="table100 ver1 m-b-110 floatingTable">
