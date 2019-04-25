@@ -96,7 +96,7 @@ h1{
 
 form, #forTables{
     position: absolute;
-    width: 500px;
+    width: 300px;
     height: 300px;
     padding: 50px;
     border: 1px solid #898E92;
@@ -117,6 +117,24 @@ form, #forTables{
     color: black;
     text-align: center;
 }
+
+.lowButt, .lowButt2, .lowButt3{
+    background-color: #47525E;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    padding: 10px;
+    border-radius: 10%;
+    color: white;
+}
+
+.lowButt:hover, .lowButt2:hover{
+    opacity: 0.7;
+}
+
+.lowButt2{
+    bottom: 3%;
+}
+
 
 #button{
     background-color: #47525E;
@@ -150,9 +168,39 @@ form, #forTables{
 	font-size: 20px;
 }
 
-#tableIDK{
+
+/*-----------------Cosas Alex View-------------------------------*/
+
+#forTables{
+    width: 500px;
 
 }
+
+#tableIDK{
+    height: 50%;
+    width: 100%;
+    align-content: center;
+}
+
+#tabbleIDK th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+#divButts{
+    width: 100%;
+    height: 50%;
+}
+
+.lowButt3{
+    margin-right: 5%;
+    float: left;
+    display: block;
+}
+
 
 
 

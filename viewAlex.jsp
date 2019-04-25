@@ -17,7 +17,7 @@
 
     <section id="start">
         <div id="forTables">
-            <table id="tableIDK">
+            <table id="tableIDK" align="center">
                 <tr>
                     <th>name</th>
                     <th>Username</th>
@@ -37,11 +37,13 @@
                   </tr>
                 </c:forEach>
             </table>
-        </div>
-        <a href="register.html">Crear Nuevo</a>
-        <a href="#">Modificar</a>
-        <a href="admins.jsp">Regresar</a>
+            <div id="divButts">
+                <a href="register.html" class="lowButt3">Crear Nuevo</a>
+                <a href="#" class="lowButt3">Modificar</a>
+                <a href="admins.jsp" class="lowButt3">Regresar</a>
+            </div>
 
+        </div>
     </section>
 </body>
 </html>
