@@ -58,12 +58,13 @@ table {
 
 
 #wrapper{
-	background-color: transparent;
+	background-color: #F5F5F5;
 	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 10%;
+	height: 91%;
+	position: fixed;
+	bottom: 0;
 }
+
 body{
     width: 100%;
     height: 100%;
@@ -74,10 +75,9 @@ body{
     text-align: center;
 }
 
-
 header{
 	width: 100%;
-	height: 10%;
+	height: 8%;
     background-color: green;
     position: fixed;
     top: 0;
@@ -92,77 +92,56 @@ h1{
 	transform: translateX(-50%) translateY(-50%);
 }
 
-h2{
-
+#headerAdmin{
+	position: absolute;
+	font-size: 20px;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
 }
 
 /*--------------Izquierda-------------------*/
-#clientes{
+#empleados{
 	width: 30%;
 	height: 100%;
-	background-color: red; 
+	background-color: transparent; 
 	float: left;
-	/*position: absolute;
-	border: 5px solid #898E92;
-    border-radius: 5px;
-    color: black;
-	left: 5%;
-	top: 10%;*/
-}
-
-#clientesTable1 td, #clientesTable1 th, #clientesTable2 td, #clientesTable2 th{
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#clientesTable1, #clientesTable2{
-	width: 50%;
-	height: auto;
-	float: left;
-	border-collapse: collapse;
-}
-
-#clientesTable1 tr:nth-child(even), #clientesTable2 tr:nth-child(even){
-	background-color: #f2f2f2;
-}
-
-#clientesTable1 tr:hover, #clientesTable2 tr:hover{
-	background-color: #ddd;
-}
-
-#clientesTable1 th, #clientesTable2 th{
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
 }
 
 /*---------------Centro--------------------*/
+
 #juicios{
 	width: 70%;
 	height: 50%;
-	background-color: blue;
+	background-color: transparent;
 	float: left;
-	/*position: absolute;
-	border: 5px solid #898E92;
-    border-radius: 5px;
-    color: black;
-	right: 0%;
-	top: 0%;*/
 }
 
-#empleados{
+#clientes{
 	width: 70%;
 	height: 50%;
-	background-color: yellow;
+	background-color: transparent;
 	float: left;
-	/*position: absolute;
-	border: 5px solid #898E92;
-    border-radius: 5px;
-    color: black;
-	right: 0%;
-	top: 50%;*/
+}
+
+/*-------------Tables----------------*/
+
+.floatingTable{
+	margin-top: 15px;
+	margin-left: 15px;
+	float: left;
+}
+
+.floatingTable2{
+	float:left;
+	margin-top:15px;
+	margin-right: 15px;
+}
+
+.floatingTable3{
+	float: left;
+	margin-top: 50px;
+	margin-left: 15px;
 }
 
 
