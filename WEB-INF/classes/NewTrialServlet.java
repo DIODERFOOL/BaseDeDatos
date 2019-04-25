@@ -57,7 +57,7 @@ public class NewTrialServlet extends HttpServlet{
 				String month = reformatDate.substring(5,7);
 				String year =  reformatDate.substring(0,4);
 				reformatDate = day + "/" + month + "/" + year;
-				Trial aux = new Trial(res2.getString("name"), reformatDate);
+				Trial aux = new Trial(Long.valueOf(res2.getString("trialID")), res2.getString("address"), reformatDate, Long.valueOf(res2.getString("idClient")));
 				trialList.add(aux);
 			}
 

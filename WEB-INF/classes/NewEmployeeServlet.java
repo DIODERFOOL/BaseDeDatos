@@ -41,8 +41,8 @@ public class NewEmployeeServlet extends HttpServlet{
 			String name = request.getParameter("addName");
 			// String username = request.getParameter("addUser");
 			// String password = request.getParameter("addPW");
-			String salary = request.getParameter("addSalary");
-			String settlement = request.getParameter("addSettlement");
+			double salary = Double.parseDouble(request.getParameter("addSalary"));
+			double settlement = Double.parseDouble(request.getParameter("addSettlement"));
 			String admissionDate = request.getParameter("addAdmisDate");
 			String contractCode = request.getParameter("addContractCode");
 			String role = request.getParameter("addForma");
@@ -57,7 +57,15 @@ public class NewEmployeeServlet extends HttpServlet{
 			Vector<Employee> employeeList = new Vector<Employee>();
 
 			while(res2.next()){
-				Employee aux = new Employee(res2.getString("name"), res2.getString("salary"), res2.getString("settlement"), res2.getString("admissionDate"), res2.getString("contractCode"), res2.getString("role"));
+
+				String reformatDate = res2.getString("admissionDate");
+				//2018-mm-dd -> dd-mm-2018
+				String day = reformatDate.substring(8);
+				String month = reformatDate.substring(5,7);
+				String year =  reformatDate.substring(0,4);
+				reformatDate = day + "/" + month + "/" + year;
+
+				Employee aux = new Employee(Long.valueOf(res2.getString("Employee_Id")), reformatDate, res2.getString("company_role"), res2.getString("name"), Double.valueOf(res2.getString("salary")), Long.valueOf(res2.getString("idTrial")), res2.getString("contractCode"), Double.valueOf(res2.getString("settlement")), Long.valueOf(res2.getString("company_id")));
 				employeeList.add(aux);
 			}
 
