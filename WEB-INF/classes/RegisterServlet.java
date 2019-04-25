@@ -14,7 +14,7 @@ public class RegisterServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
@@ -49,13 +49,13 @@ public class RegisterServlet extends HttpServlet{
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
 
-			// ResultSet res2 = stat.executeQuery("SELECT * FROM users;");
-			// Vector<User> userList = new Vector<User>();
+			ResultSet res2 = stat.executeQuery("SELECT * FROM users ORDER BY userID DESC LIMIT 1");
+			Vector<User> userList = new Vector<User>();
 
-			// while(res2.next()){
-			// 	User aux = new User(res2.getString("name"), res2.getString("username"), res2.getString("password"));
-			// 	userList.add(aux);
-			// }
+			while( res2.next() ){
+				User aux = new User(Long.parseLong( res2.getString("userId") ), res2.getString("name"), res2.getString("username"), res2.getString("password"), res2.getString("role"));
+				userList.add(aux);
+			}
 
 			stat.close();
 			con.close();
@@ -64,18 +64,18 @@ public class RegisterServlet extends HttpServlet{
 
 			// //------JSP call forward BEGINS------
 
-			// request.setAttribute("userList",userList);
-			// RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredUsers.jsp");
+			request.setAttribute("userList",userList);
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/viewAlex.jsp");
 
-			// if(disp!=null){
-			// 	disp.forward(request,response);
-			// }
+			if(disp!=null){
+				disp.forward(request,response);
+			}
 			//------JSP call forward ENDS ------
 
 
 			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
 
-			response.sendRedirect("./index.html?userRegister=1");
+			// response.sendRedirect("./index.html?userRegister=1");
 
 		}
 		catch(Exception e){
