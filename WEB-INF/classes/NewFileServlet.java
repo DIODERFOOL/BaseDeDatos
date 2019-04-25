@@ -4,6 +4,7 @@ import javax.servlet.http.*;
 import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
+import java.util.Random;
 
 @WebServlet("/CreateFile")
 public class NewFileServlet extends HttpServlet{
@@ -36,11 +37,15 @@ public class NewFileServlet extends HttpServlet{
 			//------Connection to mySQL setup ENDS----------
 
 			//------File creation STARTS------
+			Random r = new Random();
+			int low = 1;
+			int high = 6;
+			int result = r.nextInt(high-low) + low;
 
 			//retrieve values from register's forms
 			String name = request.getParameter("addName");
 			String date = request.getParameter("addContacto");
-			int lawsuit_id = 3;
+			int lawsuit_id = result;
 
 			//save values in database
 			int res = stat.executeUpdate("insert into file(name, creation_date, lawsuit_id) VALUES (\"" + name + "\", \"" + date + "\", \"" + lawsuit_id + "\");");

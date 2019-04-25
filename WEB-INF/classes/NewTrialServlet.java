@@ -4,6 +4,7 @@ import javax.servlet.http.*;
 import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
+import java.util.Random;
 
 @WebServlet("/CreateTrial")
 public class NewTrialServlet extends HttpServlet{
@@ -38,9 +39,14 @@ public class NewTrialServlet extends HttpServlet{
 			//------Trial creation STARTS------
 
 			//retrieve values from register's forms
+			Random r = new Random();
+			int low = 1;
+			int high = 6;
+			int result = r.nextInt(high-low) + low;
+
 			String address = request.getParameter("addAddress");
 			String date = request.getParameter("addDate");
-			int idClient = 3;
+			int idClient = result;
 
 			//save values in the database
 			int res = stat.executeUpdate("insert into trial(location, trialDate, idClient) VALUES (\"" + address + "\", \"" + date + "\", \"" + idClient + "\");");
