@@ -38,6 +38,9 @@
                 </c:forEach>
             </table>
         </div>
+        <a href="register.html">Crear Nuevo</a>
+        <a href="#">Modificar</a>
+        <a href="admins.jsp">Regresar</a>
 
     </section>
 </body>
