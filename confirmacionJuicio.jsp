@@ -19,24 +19,25 @@
         <div id="forTables">
             <table id="tableIDK">
                 <tr>
-                    <th>name</th>
-                    <th>Username</th>
-                    <th>Rol</th>
+                    <th>Ubicación</th>
+                    <th>Fecha del Juicio</th>
                 </tr>
-                <c:forEach items="${requestScope.List}" var="us">
+                <c:forEach items="${requestScope.trialList}" var="us">
                   <tr>
                     <td>
-                      <c:out value="${us.name}" />
+                      <c:out value="${us.location}" />
                     </td>
                     <td>
-                      <c:out value="${us.username}" />
-                    </td>
-                    <td>
-                      <c:out value="${us.role}" />
+                      <c:out value="${us.trialDate}" />
                     </td>
                   </tr>
                 </c:forEach>
             </table>
+            <div id="divButts">
+                <a href="regJuicio.html" class="lowButt3">Crear Nuevo</a>
+                <a href="#" class="lowButt3">Modificar</a>
+                <a href="admins.jsp" class="lowButt3">Regresar</a>
+            </div>
         </div>
 
     </section>

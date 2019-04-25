@@ -19,24 +19,37 @@
         <div id="forTables">
             <table id="tableIDK">
                 <tr>
-                    <th>name</th>
-                    <th>Username</th>
+                    <th>Nombre</th>
+                    <th>Salario</th>
                     <th>Rol</th>
+                    <th>Fecha de ingreso</th>
+                    <th>Codigo de contrato</th>
                 </tr>
-                <c:forEach items="${requestScope.List}" var="us">
+                <c:forEach items="${requestScope.employeeList}" var="us">
                   <tr>
                     <td>
                       <c:out value="${us.name}" />
                     </td>
                     <td>
-                      <c:out value="${us.username}" />
+                      <c:out value="${us.salary}" />
                     </td>
                     <td>
-                      <c:out value="${us.role}" />
+                      <c:out value="${us.company_role}" />
+                    </td>
+                    <td>
+                      <c:out value="${us.admissionDate}" />
+                    </td>
+                    <td>
+                      <c:out value="${us.contractCode}" />
                     </td>
                   </tr>
                 </c:forEach>
             </table>
+            <div id="divButts">
+                <a href="registerEmployee.html" class="lowButt3">Crear Nuevo</a>
+                <a href="#" class="lowButt3">Modificar</a>
+                <a href="admins.jsp" class="lowButt3">Regresar</a>
+            </div>
         </div>
 
     </section>

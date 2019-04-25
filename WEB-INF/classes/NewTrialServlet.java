@@ -14,7 +14,7 @@ public class NewTrialServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
@@ -40,24 +40,25 @@ public class NewTrialServlet extends HttpServlet{
 			//retrieve values from register's forms
 			String address = request.getParameter("addAddress");
 			String date = request.getParameter("addDate");
+			int idClient = 3;
 
 			//save values in the database
-			int res = stat.executeUpdate("insert into file(address, date) VALUES (\"" + address + "\", \"" + date + "\");");
+			int res = stat.executeUpdate("insert into trial(location, trialDate, idClient) VALUES (\"" + address + "\", \"" + date + "\", \"" + idClient + "\");");
 
 			//!!!!!!---------   DEBUGGING - For class presentation only - Creating a JSP with all registered users example !!!!!!---------
 
-			ResultSet res2 = stat.executeQuery("SELECT * FROM file;");
+			ResultSet res2 = stat.executeQuery("SELECT * FROM trial ORDER BY TrialId DESC LIMIT 1;");
 			Vector<Trial> trialList = new Vector<Trial>();
 
 			while(res2.next()){
 				//Corregir formato de la fecha para impresión en el jsp
-				String reformatDate = res2.getString("creation_date");
+				String reformatDate = res2.getString("trialDate");
 				//2018-mm-dd -> dd-mm-2018
 				String day = reformatDate.substring(8);
 				String month = reformatDate.substring(5,7);
 				String year =  reformatDate.substring(0,4);
 				reformatDate = day + "/" + month + "/" + year;
-				Trial aux = new Trial(Long.valueOf(res2.getString("trialID")), res2.getString("address"), reformatDate, Long.valueOf(res2.getString("idClient")));
+				Trial aux = new Trial(Long.valueOf(res2.getString("TrialId")), res2.getString("location"), reformatDate, Long.valueOf(res2.getString("idClient")));
 				trialList.add(aux);
 			}
 
@@ -65,7 +66,7 @@ public class NewTrialServlet extends HttpServlet{
 			con.close();
 
 			request.setAttribute("trialList",trialList);
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredTrial.jsp");
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/confirmacionJuicio.jsp");
 
 			if(disp!=null){
 				disp.forward(request,response);

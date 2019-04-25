@@ -19,24 +19,25 @@
         <div id="forTables">
             <table id="tableIDK">
                 <tr>
-                    <th>name</th>
-                    <th>Username</th>
-                    <th>Rol</th>
+                    <th>Nombre</th>
+                    <th>Contacto</th>
                 </tr>
-                <c:forEach items="${requestScope.List}" var="us">
+                <c:forEach items="${requestScope.clientList}" var="us">
                   <tr>
                     <td>
                       <c:out value="${us.name}" />
                     </td>
                     <td>
-                      <c:out value="${us.username}" />
-                    </td>
-                    <td>
-                      <c:out value="${us.role}" />
+                      <c:out value="${us.contact}" />
                     </td>
                   </tr>
                 </c:forEach>
             </table>
+            <div id="divButts">
+                <a href="clientes.html" class="lowButt3">Crear Nuevo</a>
+                <a href="#" class="lowButt3">Modificar</a>
+                <a href="admins.jsp" class="lowButt3">Regresar</a>
+            </div>
         </div>
 
     </section>

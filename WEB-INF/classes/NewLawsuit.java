@@ -14,7 +14,7 @@ public class NewLawsuit extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
@@ -41,20 +41,21 @@ public class NewLawsuit extends HttpServlet{
 			String name = request.getParameter("sName");
 			String reclamo = request.getParameter("sReclamo");
 			String direccion = request.getParameter("sDireccion");
+			int trial_id = 3;
 			// String password = request.getParameter("addPW");
 			// String role = request.getParameter("addForma");
 
 			//save values in database
-			int res = stat.executeUpdate("insert into lawsuit(name, affair, adress) VALUES (\"" + name + "\", \"" + reclamo + "\", \"" + direccion + "\");");
+			int res = stat.executeUpdate("insert into lawsuit(name, affair, address, trial_id) VALUES (\"" + name + "\", \"" + reclamo + "\", \"" + direccion + "\", \"" + trial_id + "\");");
 
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
 
-			ResultSet res2 = stat.executeQuery("SELECT * FROM lawsuit;");
+			ResultSet res2 = stat.executeQuery("SELECT * FROM lawsuit ORDER BY LawsuitId DESC LIMIT 1;");
 			Vector<Lawsuit> lawsuitList = new Vector<Lawsuit>();
 
 			while(res2.next()){
-				Lawsuit aux = new Lawsuit(res2.getString("name"), res2.getString("affair"), res2.getString("adress"));
+				Lawsuit aux = new Lawsuit(res2.getString("name"), res2.getString("affair"), res2.getString("address"), Integer.valueOf( res2.getString("trial_id") ) );
 				lawsuitList.add(aux);
 			}
 
@@ -66,7 +67,7 @@ public class NewLawsuit extends HttpServlet{
 			// //------JSP call forward BEGINS------
 
 			request.setAttribute("lawsuitList",lawsuitList);
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredLawsuit.jsp");
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/confirmacionDemanda.jsp");
 
 			if(disp!=null){
 				disp.forward(request,response);
