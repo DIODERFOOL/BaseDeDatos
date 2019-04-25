@@ -60,7 +60,7 @@ public class NewEmployeeServlet extends HttpServlet{
 
 			while(res2.next()){
 
-				String reformatDate = res2.getString("admissionDate");
+				String reformatDate = res2.getString("admission_date");
 				//2018-mm-dd -> dd-mm-2018
 				String day = reformatDate.substring(8);
 				String month = reformatDate.substring(5,7);

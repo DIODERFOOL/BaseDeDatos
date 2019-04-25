@@ -34,7 +34,7 @@
                       <c:out value="${us.salary}" />
                     </td>
                     <td>
-                      <c:out value="${us.company_role}" />
+                      <c:out value="${us.companyRole}" />
                     </td>
                     <td>
                       <c:out value="${us.admissionDate}" />
