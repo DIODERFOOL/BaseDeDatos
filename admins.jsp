@@ -5,10 +5,12 @@
 
 <html>
 <head>
-	<title>Dioses versión jsp</title>
+	<title>Homepage - CILA</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/admins.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<script type="text/javascript" src="js/jQuery.js"></script>
 </head>
 <body>
 	<header>
@@ -20,7 +22,7 @@
 		<div id="leftMenu">
 			<div id="clockSpace">
 				<!--<img src="img/blank-avatar.jpg" id="avatar">-->
-				<p>Bienvenido ${Nombre} <br><br> ¡Ojalá tengas un buen día!</p>
+				<br><p>Bienvenido!</p><p>Son las:</p><p class="timeText"></p><p>del</p><p class="dateText"></p>
 
 				<!--<p id="clock"></p>-->
 			</div>
@@ -191,20 +193,15 @@
 	</div>
 </body>
 <script>
-	function startTime() {
-	  var today = new Date();
-	  var h = today.getHours();
-	  var m = today.getMinutes();
-	  var s = today.getSeconds();
-	  m = checkTime(m);
-	  s = checkTime(s);
-	  document.getElementById('clock').innerHTML =
-	  h + ":" + m + ":" + s;
-	  var t = setTimeout(startTime, 500);
+	currentTime();
+	
+	function currentTime(){
+		var today = new Date();
+		var date = today.getDate() + ' de ' + today.toLocaleString('es-us', { month: 'long' }) + ' del ' + today.getFullYear();
+		var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		$('.dateText').html(date);
+		$('.timeText').html(time);
 	}
-	function checkTime(i) {
-	  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-	  return i;
-	}
+	
 </script>
 </html>
