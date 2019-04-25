@@ -32,7 +32,7 @@
 	</header>
 	
 	<div id="wrapper">
-		
+
 		<div id="clientes">
 			<h3>CLIENTES</h3>
 			<div class="table100 ver1 m-b-110 floatingTable">
@@ -94,7 +94,7 @@
 						<table>
 							<thead>
 								<tr class="row100 head">
-									<th class="cell100 column1">Locacion</th>
+									<th class="cell100 column1">Locación</th>
 									<th class="cell100 column2">Fecha</th>
 								</tr>
 							</thead>
