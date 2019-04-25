@@ -12,20 +12,19 @@
 </head>
 
 <body>
-    
     <header>
         <h1>Corporativo Integral López Asociados, S.C.</h1>
     </header>
+    <section id="start">
+        <form method="post" action="./LoginUser">
+            <p>Login</p>
+            <br>
+            <input type="text" requiered placeholder="Usuario" name="username" id="username" class="inp">
+            <input type="password" requiered placeholder="Contraseña" name="password" id="PW" class="inp">
+            <input id="button" type="submit" value="Next">
+        </form>
+    </section>
 
-    <div class="block">
-    <form method="post" action="./LoginUser">
-        <p>Login</p>
-        <br>
-        <input type="text" requiered placeholder="Usuario" name="username" id="username" class="inp">
-        <input type="password" requiered placeholder="Contraseña" name="password" id="PW" class="inp">
-        <input id="button" type="submit" value="Next">
-    </form>
-    </div>
 
     <div class="reg-error"></div>
 </body>
@@ -69,14 +68,8 @@
                     $('.reg-error').fadeIn().css('display', 'block').delay(1000).fadeOut();
                     return false;
                 }
-
                 //No error found, continue, check if combination user-password exists
-               
-               
-               
             });
-        
-        
     </script>
 
 </html>
