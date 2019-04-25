@@ -18,7 +18,7 @@
 	<div id="wrapper">
 
 		<div id="clientes">
-			<p>Lista clientes</p>
+			<h2>Lista clientes</h2>
 			<div class="floatingTable">
 			<table border="1" id="clientesTable1">
 				<tr>
@@ -56,7 +56,7 @@
 			</div>
 		</div>
 
-		<div id="empleados">
+		<div id="juicios">
 			<p>Juicios</p>
 			<div class="floatingTable">
 			<table border="1">
@@ -96,7 +96,7 @@
 
 		</div>
 
-		<div id="juicios">
+		<div id="empleados">
 			<p>Empleados</p>
 		</div>
 

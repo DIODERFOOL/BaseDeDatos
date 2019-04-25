@@ -90,9 +90,13 @@ h1{
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
+}
+
+h2{
 
 }
 
+/*--------------Izquierda-------------------*/
 #clientes{
 	width: 30%;
 	height: 100%;
@@ -106,7 +110,36 @@ h1{
 	top: 10%;*/
 }
 
-#empleados{
+#clientesTable1 td, #clientesTable1 th, #clientesTable2 td, #clientesTable2 th{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#clientesTable1, #clientesTable2{
+	width: 50%;
+	height: auto;
+	float: left;
+	border-collapse: collapse;
+}
+
+#clientesTable1 tr:nth-child(even), #clientesTable2 tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#clientesTable1 tr:hover, #clientesTable2 tr:hover{
+	background-color: #ddd;
+}
+
+#clientesTable1 th, #clientesTable2 th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+/*---------------Centro--------------------*/
+#juicios{
 	width: 70%;
 	height: 50%;
 	background-color: blue;
@@ -119,7 +152,7 @@ h1{
 	top: 0%;*/
 }
 
-#juicios{
+#empleados{
 	width: 70%;
 	height: 50%;
 	background-color: yellow;
@@ -130,13 +163,6 @@ h1{
     color: black;
 	right: 0%;
 	top: 50%;*/
-}
-
-/*--------------Centro-------------------*/
-
-#clientesTable1, #clientesTable2{
-	width: 50%;
-	float: left;
 }
 
 
