@@ -1,28 +1,46 @@
 public class Trial{
+	
+	private long trialID;
+	private String location;
+	private String trialDate;
+	private long idClient;
 
-	public String address;
-	public String date;
-
-	public Trial(String address, String date){
-		this.address= address;
-		this.date=date;
+	public Trial(long trialID, String location, String trialDate, long idClient){
+		this.trialID = trialID;
+		this.location = location;
+		this.trialDate = trialDate;
+		this.idClient = idClient;
 	}
 
-	public void setAddress(String address){
-		this.address = address;
+	public void setTrialID(long trialID){
+		this.trialID = trialID;
 	}
 
-	public String getAddress(){
-		return address;
+	public long getTrialID(){
+		return trialID;
 	}
 
-	public void setDate(String date){
-		this.date = date;
+	public void setLocation(String location){
+		this.location = location;
 	}
 
-	public String getDate(){
-		return date;
+	public String getLocation(){
+		return location;
 	}
 
+	public void setTrialDate(String trialDate){
+		this.trialDate = trialDate;
+	}
 
+	public String getTrialDate(){
+		return trialDate;
+	}
+
+	public void setIdClient(long idClient){
+		this.idClient = idClient;
+	}
+
+	public long getIdClient(){
+		return idClient;
+	}
 }

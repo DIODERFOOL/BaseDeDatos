@@ -70,8 +70,10 @@ public class NewFileServlet extends HttpServlet{
 			//------JSP call forward BEGINS------
 
 			request.setAttribute("fileList",fileList);
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredFiles.jsp");
 
+
+
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/showRegisteredFiles.jsp");
 			if(disp!=null){
 				disp.forward(request,response);
 			}
