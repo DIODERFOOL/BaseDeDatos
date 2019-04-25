@@ -214,6 +214,7 @@ p .centerText{
 	position: absolute;	
 	right: 5%;
 	bottom: 5%;
+	display: none;
 }
 
 .lowButt:hover, .lowButt2:hover{
@@ -222,6 +223,7 @@ p .centerText{
 
 .lowButt2{
 	bottom: 3%;
+	display: none;
 }
 
 
