@@ -11,10 +11,23 @@
 	<link href="css/admins.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<script type="text/javascript" src="js/jQuery.js"></script>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
 	<header>
-		<h1>Corporativo Integral López Asociados, S.C.</h1>
+		<h1 id="headerAdmin">Corporativo Integral López Asociados, S.C.</h1>
 	</header>
 	
 	<div id="wrapper">
@@ -22,7 +35,7 @@
 		<div id="leftMenu">
 			<div id="clockSpace">
 				<!--<img src="img/blank-avatar.jpg" id="avatar">-->
-				<br><p>Bienvenido!</p><p>Son las:</p><p class="timeText"></p><p>del</p><p class="dateText"></p>
+				<p>Bienvenido!</p><p>Son las:</p><p class="timeText"></p><p>del</p><p class="dateText"></p>
 
 				<!--<p id="clock"></p>-->
 			</div>
@@ -40,155 +53,199 @@
 		</div>
 
 		<div id="clientes">
-			<div class="floatingTable">
-			<table border="1" id="clientesTable1">
-				<tr>
-					<th>Nombre</th>
-					<th>Contacto</th>
-				</tr>
-				<c:forEach items="${requestScope.clientList}" var="us">
-	  				<tr>
-						<td>
-        			<c:out value="${us.name}" />
-      				<br/>
-						</td>
-						<td>
-        			<c:out value="${us.contact}" />
-      				<br/>
-						</td>
-					</tr>
-  				</c:forEach>
-			</table>
-			</div>
-			<div class="floatingTable">
-			<table border="1" id="clientesTable2">
-				<tr>
-					<th>Usuario Responsable</th>
-				</tr>
-				<c:forEach items="${requestScope.usernameList}" var="us2">
-	  				<tr>
-						<td>
-        			<c:out value="${us2}" />
-      				<br/>
-						</td>
-					</tr>
-  				</c:forEach>
-			</table>
-			</div>
-			<a id="button" class="lowButt" href="verCliente.html">Ver</a>
-		</div>
+			<h3>CLIENTES</h3>
+			<div class="table100 ver1 m-b-110 floatingTable">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Nombre</th>
+									<th class="cell100 column2">Contacto</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
 
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.clientList}" var="us">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${us.name}" /></td>
+									<td class="cell100 column1"><c:out value="${us.contact}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			
+			<div class="table100 ver3 m-b-110 floatingTable">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Usuario Responsable</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.usernameList}" var="us2">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${us2}"/></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			<!--<a id="button" class="lowButt" href="verCliente.html">Ver</a>-->
+		</div>
+		
 		<div id="juicios">
-			<div class="floatingTable">
-			<table border="1">
-				<tr>
-					<th>Locacion</th>
-					<th>Fecha</th>
-				</tr>
-				<c:forEach items="${requestScope.trialList}" var="tr">
-	  				<tr>
-						<td>
-        			<c:out value="${tr.location}" />
-      				<br/>
-						</td>
-						<td>
-        			<c:out value="${tr.trialDate}" />
-      				<br/>
-						</td>
-					</tr>
-  				</c:forEach>
-			</table>
-			</div>
-			<div class="floatingTable">
-			<table border="1">
-				<tr>
-					<th>Cliente</th>
-				</tr>
-				<c:forEach items="${requestScope.clientNamesList}" var="tr2">
-	  				<tr>
-						<td>
-        			<c:out value="${tr2}" />
-      				<br/>
-						</td>
-					</tr>
-  				</c:forEach>
-			</table>
-			</div>
-			<a id="button" class="lowButt" href="verCliente.html">Ver</a>
-		</div>
+			<h3>JUICIOS</h3>
+			<div class="table100 ver2 m-b-110 floatingTable2">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Locacion</th>
+									<th class="cell100 column2">Fecha</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
 
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.trialList}" var="tr">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${tr.location}" /></td>
+									<td class="cell100 column1"><c:out value="${tr.trialDate}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			
+			<div class="table100 ver2 m-b-110 floatingTable2">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Cliente</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.clientNamesList}" var="tr2">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${tr2}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			<!--<a id="button" class="lowButt" href="verCliente.html">Ver</a>-->
+		</div>
+		
 		<div id="empleados">
-			<div class="floatingTable">
-			<table border="1">
-				<tr>
-					<th>Fecha de Admision</th>
-					<th>Rol en la Compania</th>
-					<th>Nombre del Empleado</th>
-					<th>Salario</th>
-					<th>Código de Contrato</th>
-					<th>Finiquito</th>
-				</tr>
-				<c:forEach items="${requestScope.employeeList}" var="em">
-	  				<tr>
-						<td>
-        			<c:out value="${em.admissionDate}" />
-      				<br/>
-						</td>
-						<td>
-        			<c:out value="${em.companyRole}" />
-      				<br/>
-						</td>
-						<td>
-        			<c:out value="${em.name}" />
-      				<br/>
-						</td>
-						<td>
-        			<c:out value="${em.salary}" />
-      				<br/>
-						</td>
-						<td>
-        			<c:out value="${em.contractCode}" />
-      				<br/>
-						</td>
-						<td>
-        			<c:out value="${em.settlement}" />
-      				<br/>
-						</td>
-					</tr>
-  				</c:forEach>
-			</table>
-			</div>
-			<div class="floatingTable">
-			<table border="1">
-				<tr>
-					<th>Compañía Cliente</th>
-				</tr>
-				<c:forEach items="${requestScope.clientNamesList2}" var="em2">
-	  				<tr>
-						<td>
-        			<c:out value="${em2}" />
-      				<br/>
-						</td>
-					</tr>
-  				</c:forEach>
-			</table>
-			</div>
-			<div class="floatingTable">
-			<table border="1">
-				<tr>
-					<th>Fecha del Juicio</th>
-				</tr>
-				<c:forEach items="${requestScope.trialList2}" var="em3">
-	  				<tr>
-						<td>
-        			<c:out value="${em3}" />
-      				<br/>
-						</td>
-					</tr>
-  				</c:forEach>
-			</table>
-			</div>
-			<a id="button" class="lowButt2" href="verCliente.html">Ver</a>
+			<h3>EMPLEADOS</h3>
+			<div class="table100 ver3 m-b-110 floatingTable3">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Fecha de Admisión</th>
+									<th class="cell100 column2">Rol en la Compañía</th>
+									<th class="cell100 column2">Nombre del Empleado</th>
+									<th class="cell100 column2">Salario</th>
+									<th class="cell100 column2">Código de Contrato</th>
+									<th class="cell100 column2">Finiquito</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.employeeList}" var="em">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${em.admissionDate}" /></td>
+									<td class="cell100 column1"><c:out value="${em.companyRole}" /></td>
+									<td class="cell100 column1"><c:out value="${em.name}" /></td>
+									<td class="cell100 column1"><c:out value="${em.salary}" /></td>
+									<td class="cell100 column1"><c:out value="${em.contractCode}" /></td>
+									<td class="cell100 column1"><c:out value="${em.settlement}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			
+<!--
+			<div class="table100 ver2 m-b-110 floatingTable3">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Cliente</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.clientNamesList2}" var="em2">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${em2}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			
+			<div class="table100 ver2 m-b-110 floatingTable3">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Fecha del Juicio</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.trialList2}" var="em3">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${em3}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+-->
+			<!--<a id="button" class="lowButt" href="verCliente.html">Ver</a>-->
 		</div>
 
 	</div>
@@ -199,7 +256,7 @@
 	function currentTime(){
 		var today = new Date();
 		var date = today.getDate() + ' de ' + today.toLocaleString('es-us', { month: 'long' }) + ' del ' + today.getFullYear();
-		var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		var time = today.getHours() + ":" + today.getMinutes();
 		$('.dateText').html(date);
 		$('.timeText').html(time);
 	}
