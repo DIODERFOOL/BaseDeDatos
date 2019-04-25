@@ -4,6 +4,7 @@ import javax.servlet.http.*;
 import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
+import java.util.Random;
 
 @WebServlet("/RegisterEmployee")
 public class NewEmployeeServlet extends HttpServlet{
@@ -36,6 +37,10 @@ public class NewEmployeeServlet extends HttpServlet{
 			//------Connection to mySQL setup ENDS----------
 
 			//------User register STARTS------
+			Random r = new Random();
+			int low = 1;
+			int high = 6;
+			int result = r.nextInt(high-low) + low;
 
 			//retrieve values from register's forms
 			String name = request.getParameter("addName");
@@ -46,8 +51,8 @@ public class NewEmployeeServlet extends HttpServlet{
 			String admissionDate = request.getParameter("addAdmisDate");
 			String contractCode = request.getParameter("addContractCode");
 			String role = request.getParameter("addForma");
-			int idTRial = 3;
-			int company_id = 3;
+			int idTRial = result;
+			int company_id = result;
 
 			//save values in database
 			int res = stat.executeUpdate("insert into employee(name, salary, settlement, admission_date, contractCode, company_role, idTrial, company_id) VALUES (\"" + name + "\", \"" + salary + "\", \"" + settlement + "\", \"" + admissionDate + "\" , \"" + contractCode + "\" , \"" + role + "\",  \"" + idTRial + "\",  \"" + company_id + "\");");

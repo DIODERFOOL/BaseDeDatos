@@ -4,6 +4,7 @@ import javax.servlet.http.*;
 import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
+import java.util.Random;
 
 @WebServlet("/RegisterLawsuit")
 public class NewLawsuit extends HttpServlet{
@@ -36,12 +37,17 @@ public class NewLawsuit extends HttpServlet{
 			//------Connection to mySQL setup ENDS----------
 
 			//------User register STARTS------
+			Random r = new Random();
+			int low = 1;
+			int high = 6;
+			int result = r.nextInt(high-low) + low;
+
 
 			//retrieve values from register's forms
 			String name = request.getParameter("sName");
 			String reclamo = request.getParameter("sReclamo");
 			String direccion = request.getParameter("sDireccion");
-			int trial_id = 3;
+			int trial_id = result;
 			// String password = request.getParameter("addPW");
 			// String role = request.getParameter("addForma");
 
