@@ -28,6 +28,7 @@
 <body onload="startTime()">
 	<header>
 		<h1 id="headerAdmin">Corporativo Integral López Asociados, S.C.</h1>
+		<a href="./"><img src="img/logOut.png" id="logOutButt"></a>
 	</header>
 
 	<div id="wrapper">

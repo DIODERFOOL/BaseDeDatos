@@ -82,6 +82,14 @@ h1{
 	transform: translateX(-50%) translateY(-50%);
 }
 
+#logOutButt{
+    height: 50%;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 #wrapper{
 	background-color: #F5F5F5;
 	width: 100%;
