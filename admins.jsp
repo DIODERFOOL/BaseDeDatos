@@ -34,12 +34,11 @@
 					<!--<form method="post" action="./dropDownClient"> <input type="submit" name="regJuicio" value="Crear Juicio"> </form>-->
 				</ul>
 			</div>
-			
 		</div>
 
 		<div id="clientes">
 			<div class="floatingTable">
-			<table border="1">
+			<table border="1" id="clientesTable1">
 				<tr>
 					<th>Nombre</th>
 					<th>Contacto</th>
@@ -59,7 +58,7 @@
 			</table>
 			</div>
 			<div class="floatingTable">
-			<table border="1">
+			<table border="1" id="clientesTable2">
 				<tr>
 					<th>Usuario Responsable</th>
 				</tr>
