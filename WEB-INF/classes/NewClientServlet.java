@@ -40,11 +40,12 @@ public class NewClientServlet extends HttpServlet{
 			//retrieve values from register's forms
 			String name = request.getParameter("ClientName");
 			String contact = request.getParameter("ClientContact");
+			long userID = Long.parseLong(request.getParameter("userID"));
 			// String password = request.getParameter("addPW");
 			// String role = request.getParameter("addForma");
 
 			//save values in database
-			int res = stat.executeUpdate("insert into client(name, contact) VALUES (\"" + name + "\", \"" + contact + "\");");
+			int res = stat.executeUpdate("insert into client(name, contact, id_User) VALUES (\"" + name + "\", \"" + contact + "\" , \"" + userID + "\");");
 
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
@@ -53,7 +54,7 @@ public class NewClientServlet extends HttpServlet{
 			Vector<Client> clientList = new Vector<Client>();
 
 			while(res2.next()){
-				Client aux = new Client(res2.getString("name"), res2.getString("contact"));
+				Client aux = new Client(res2.getLong("companyID"),res2.getString("name"), res2.getString("contact"), res2.getLong("userID"));
 				clientList.add(aux);
 			}
 
