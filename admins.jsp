@@ -31,6 +31,7 @@
 					<a href="regJuicio.html"><li>Crear Juicio</li></a>
 					<a href="pruebasBD.html"><li>Crear Demanda</li></a>
 					<a href="regArchivo.jsp"><li>Crear Archivo</li></a>
+					<a href="register.html"><li>Crear Usuario</li></a>
 					<!--<form method="post" action="./dropDownClient"> <input type="submit" name="regJuicio" value="Crear Juicio"> </form>-->
 				</ul>
 			</div>
