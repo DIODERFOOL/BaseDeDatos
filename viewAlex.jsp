@@ -19,13 +19,23 @@
         <div id="forTables">
             <table id="tableIDK">
                 <tr>
-                    <th>Sup</th>
-                    <th>Mai Bruh</th>
+                    <th>name</th>
+                    <th>Username</th>
+                    <th>Rol</th>
                 </tr>
-                <tr>
-                    <td>Segunda parte</td>
-                    <td>Más cosas</td>
-                </tr>
+                <c:forEach items="${requestScope.userList}" var="us">
+                  <tr>
+                    <td>
+                      <c:out value="${us.name}" />
+                    </td>
+                    <td>
+                      <c:out value="${us.username}" />
+                    </td>
+                    <td>
+                      <c:out value="${us.role}" />
+                    </td>
+                  </tr>
+                </c:forEach>
             </table>
         </div>
 
