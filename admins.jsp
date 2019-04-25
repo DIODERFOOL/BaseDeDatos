@@ -113,7 +113,7 @@
 						<table>
 							<thead>
 								<tr class="row100 head">
-									<th class="cell100 column1">Locacion</th>
+									<th class="cell100 column1">Locación</th>
 									<th class="cell100 column2">Fecha</th>
 								</tr>
 							</thead>
