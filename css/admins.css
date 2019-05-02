@@ -222,7 +222,7 @@ p .centerText{
 	position: absolute;	
 	right: 5%;
 	bottom: 5%;
-	display: none;
+	/*display: none;*/
 }
 
 .lowButt:hover, .lowButt2:hover{
@@ -231,7 +231,7 @@ p .centerText{
 
 .lowButt2{
 	bottom: 3%;
-	display: none;
+	/*display: none;*/
 }
 
 
@@ -269,4 +269,32 @@ p .centerText{
 h3{
 	padding-left: 15px;
 	padding-top: 15px;
+}
+
+
+/*----------------Tables Ver-------------------*/
+
+#clientesVer{
+	width: 65%;
+	height: 50%;
+	background-color: transparent;
+	position: absolute;	
+	left: 15%;
+	top:  15%;
+	display: block;
+}
+
+#clientesTable1, #clientesTable2{
+	width: 50%;
+	float: left;
+}
+
+#empleados{
+	width: 65%;
+	height: 50%;
+	background-color: transparent;
+	position: absolute;	
+	left: 15%;
+	bottom: 0;
+	display: block;
 }

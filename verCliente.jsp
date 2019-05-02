@@ -8,14 +8,29 @@
 	<title>Dioses</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<link href="css/admins.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
 <body>
 	<header>
-		<h1>Corporativo Integral López Asociados, S.C.</h1>
+		<h1 id="headerAdmin">Corporativo Integral López Asociados, S.C.</h1>
+		<a href="./AdminRefresh"><img src="img/left_Arrow.png" id="backArrow"></a>
 	</header>
 
-	<div id="clientes">
+	<div id="clientesVer">
 			<h3>CLIENTES</h3>
 			<div class="table100 ver1 m-b-110 floatingTable">
 					<div class="table100-head">
