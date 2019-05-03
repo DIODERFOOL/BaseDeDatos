@@ -220,6 +220,7 @@ p .centerText{
 	position: absolute;	
 	right: 5%;
 	bottom: 5%;
+	height: 45px;
 	/*display: none;*/
 }
 
@@ -230,6 +231,18 @@ p .centerText{
 .lowButt2{
 	bottom: 3%;
 	/*display: none;*/
+}
+
+.clientesButton{
+	top: 40%;
+}
+
+.empleadosButton{
+	top: 140%;
+}
+
+.juiciosButton{
+	bottom: 5%;
 }
 
 
@@ -344,3 +357,11 @@ h3{
 	background-color: white;
 	color: #fa4251;
 }
+
+.formCM{
+	top: 30%;
+	position: absolute;
+	right: 10%;
+	display: none;
+}
+

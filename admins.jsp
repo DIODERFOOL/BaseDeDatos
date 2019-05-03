@@ -2,11 +2,13 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <html>
 <head>
 	<title>Homepage - CILA</title>
 	<meta charset="UTF-8">
+	 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/admins.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -25,7 +27,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
-<body onload="startTime()">
+<body onload="startTime()" charset="UTF-8">
 	<header>
 		<h1 id="headerAdmin">Corporativo Integral López Asociados, S.C.</h1>
 		<a href="./"><img src="img/logOut.png" id="logOutButt"></a>
@@ -42,12 +44,12 @@
 			</div>
 			<div class="leftMenuTable">
 				<ul id="uls">
-					<a href="registerEmployee.html"><li>Crear Empleado</li></a>
+					<a href="register.html"><li>Crear Usuario</li></a>
 					<a href="clientes.html"><li>Crear Cliente</li></a>
 					<a href="regJuicio.html"><li>Crear Juicio</li></a>
 					<a href="regLawsuit.html"><li>Crear Demanda</li></a>
 					<a href="regArchivo.html"><li>Crear Archivo</li></a>
-					<a href="register.html"><li>Crear Usuario</li></a>
+					<a href="registerEmployee.html"><li>Crear Empleado</li></a>
 					<!--<form method="post" action="./dropDownClient"> <input type="submit" name="regJuicio" value="Crear Juicio"> </form>-->
 				</ul>
 			</div>
@@ -104,7 +106,7 @@
 						</table>
 					</div>
 				</div>
-			<a id="button" class="lowButt" href="./ShowClients">Ver</a>
+			<a id="button" class="lowButt clientesButton" href="./ShowClients">Ver</a>
 		</div>
 
 		<div id="juicios">
@@ -158,7 +160,7 @@
 						</table>
 					</div>
 				</div>
-			<a id="button" class="lowButt" href="./ShowTrial">Ver</a>
+			<a id="button" class="lowButt juiciosButton" href="./ShowTrial">Ver</a>
 		</div>
 
 		<div id="empleados">
@@ -246,7 +248,7 @@
 					</div>
 				</div>
 -->
-			<a id="button" class="lowButt" href="./ShowEmployee">Ver</a>
+			<a id="button" class="lowButt empleadosButton" href="./ShowEmployee">Ver</a>
 		</div>
 
 	</div>

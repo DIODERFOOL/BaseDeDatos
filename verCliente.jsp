@@ -98,6 +98,13 @@
 			<input type="submit">
 		</form>
 
+		<form class="formCM" action="./ModifyClient" method="get">
+			<input type="text" name="idToModify" placeholder="ID a Modificar">
+			<input type="text" name="nameToModify" placeholder="Nombre a Modificar">
+			<input type="text" name="contactToModify" placeholder="Contacto a Modificar">
+			<input type="submit">
+		</form>
+
 </body>
 
 <script>
@@ -105,6 +112,12 @@
 	$('.botonC').on('click', function(){
                  //Validation
         $('.form').fadeIn().css('display','block');
+                
+    });
+
+    $('.botonMC').on('click', function(){
+                 //Validation
+        $('.formCM').fadeIn().css('display','block');
                 
     });
 
