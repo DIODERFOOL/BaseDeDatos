@@ -365,3 +365,20 @@ h3{
 	display: none;
 }
 
+.formME{
+	top: 30%;
+	position: absolute;
+	right: 10%;
+	display: none;
+}
+
+.formMT{
+	top: 30%;
+	position: absolute;
+	right: 10%;
+	display: none;
+}
+
+.cancel{
+	cursor: pointer;
+}

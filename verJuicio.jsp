@@ -92,17 +92,44 @@
 		<form class="formT" action="./DeleteTrial" method="get">
 			<input type="text" name="idToDelete" placeholder="ID a Eliminar">
 			<input type="submit">
+			<a class="cancel">Cancel</a>
 		</form>
 
-		
+		<form class="formMT" action="./ModifyTrial" method="get">
+			<input type="text" name="idToModify" placeholder="ID a Modificar">
+			<input type="text" name="locationToModify" placeholder="Nueva Locación">
+			<input type="date" name="dateToModify" placeholder="">
+			<input type="submit">
+			<a class="cancel">Cancel</a>
+		</form>
 
 </body>
 
 <script>
 	
 	$('.botonT').on('click', function(){
+    	$('.formT').fadeIn().css('display','block');
+        
+                
+    });
+
+    $('.cancel').on('click', function(){
                  //Validation
-        $('.formT').fadeIn().css('display','block');
+        $('.formT').fadeOut().css('display','none');
+                
+    });
+
+
+
+	$('.botonMT').on('click', function(){
+                 //Validation
+        $('.formMT').fadeIn().css('display','block');
+                
+    });
+
+    $('.cancel').on('click', function(){
+                 //Validation
+        $('.formMT').fadeOut().css('display','none');
                 
     });
 

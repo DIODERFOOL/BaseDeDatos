@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/DeleteClient")
-public class DeleteServlet extends HttpServlet{
+@WebServlet("/ModifyEmployee")
+public class ModifyEmployeeServlet extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -29,6 +29,8 @@ public class DeleteServlet extends HttpServlet{
 
 		try{
 
+			// Client client = new Client(client.getCompanyID(),client.getName(),client.getContact(),client.getId_User());
+
 			//------Connection to mySQL setup STARTS-------
 			//credentials
 			String dbbase = getServletContext().getInitParameter("base");
@@ -41,15 +43,27 @@ public class DeleteServlet extends HttpServlet{
 			Connection con = DriverManager.getConnection(url,dbusuario,dbpassword);
 			Statement stat = con.createStatement();
 
-			String id = request.getParameter("idToDelete");
+			String id = request.getParameter("idToModify");
+			String name = request.getParameter("nameToModify");
+			// if(request.getParameter("contactToModify")!=null){
+			//Modify Date
+			String date = request.getParameter("dateToModify");
+
+			//Date modified
+			String role = request.getParameter("roleToModify");
+			String salary = request.getParameter("salaryToModify");
+			String contract = request.getParameter("contractToModify");
+			String settlement = request.getParameter("settlementToModify");	
+			// }else{
+			// 	String contact = client.getContact();
+			// }
 			// String perro = "4";
 
-			int res = stat.executeUpdate("delete from client where CompanyId = " + id);
-			int res2 = stat.executeUpdate("alter table client auto_increment = " + id);
+			int res = stat.executeUpdate("update employee set admission_date = \"" + date + "\"  , company_role = \"" + role + "\" , name = \"" + name + "\" , salary = \"" + salary + "\" , contractCode = \"" + contract + "\" , settlement = \"" + settlement + "\" where Employee_Id = " + id);
 
 
 
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/ShowClients");
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/ShowEmployee");
 
 			if(disp!=null){
 				disp.forward(request,response);

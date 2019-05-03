@@ -128,6 +128,17 @@
 			<input type="submit">
 		</form>
 
+		<form class="formME" action="./ModifyEmployee" method="get">
+			<input type="text" name="idToModify" placeholder="ID a Modificar">
+			<input type="date" name="dateToModify" placeholder="Fecha">
+			<input type="text" name="roleToModify" placeholder="Rol">
+			<input type="text" name="nameToModify" placeholder="Nombre">
+			<input type="text" name="salaryToModify" placeholder="Salario">
+			<input type="text" name="contractToModify" placeholder="Número de Contrato">
+			<input type="text" name="settlementToModify" placeholder="Finiquito">
+			<input type="submit">
+		</form>
+
 </body>
 
 <script>
@@ -135,6 +146,12 @@
 	$('.botonE').on('click', function(){
                  //Validation
         $('.formE').fadeIn().css('display','block');
+                
+    });
+
+	$('.botonME').on('click', function(){
+                 //Validation
+        $('.formME').fadeIn().css('display','block');
                 
     });
 
