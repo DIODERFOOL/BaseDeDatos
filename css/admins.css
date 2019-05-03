@@ -176,11 +176,10 @@ p .centerText{
 
 /*--------------Centro-------------------*/
 
-#clientes{
-	width: 85%;
+#clientes, #juicios, #empleados{
+	width: 84%;
 	background-color: transparent;
 	float: right;
-	left: 15%;
 	clear: left;
 	display: block;
 }
@@ -188,24 +187,6 @@ p .centerText{
 #clientesTable1, #clientesTable2{
 	width: 50%;
 	float: left;
-}
-
-#empleados{
-	width: 85%;
-	background-color: transparent;
-	float: right;
-	left: 15%;
-	clear: left;
-	display: block;
-}
-
-#juicios{
-	width: 85%;
-	background-color: transparent;
-	float: right;
-	left: 15%;
-	clear: left;
-	display: block;
 }
 
 /*--------------Botones----------------*/
@@ -217,20 +198,22 @@ p .centerText{
     padding: 10px;
     border-radius: 10%;
     color: white;
-	position: absolute;	
-	right: 5%;
-	bottom: 5%;
 	height: 45px;
-	/*display: none;*/
+	/*position: absolute;	
+	right: 5%;
+	bottom: 5%;*/
+	float: right;
+	clear: left;
+	margin-right: 5%;
+	margin-bottom: 1%;
+}
+
+.lowButt2{
+	margin-bottom: 5%;
 }
 
 .lowButt:hover, .lowButt2:hover{
 	opacity: 0.7;
-}
-
-.lowButt2{
-	bottom: 3%;
-	/*display: none;*/
 }
 
 .clientesButton{
@@ -259,19 +242,7 @@ p .centerText{
 
 /*----------------Tables---------------------*/
 
-.floatingTable{
-	margin-top: 15px;
-	margin-left: 15px;
-	float: left;
-}
-
-.floatingTable2{
-	float:left;
-	margin-top:15px;
-	margin-left: 15px;
-}
-
-.floatingTable3{
+.floatingTable, .floatingTable2, .floatingTable3{
 	float: left;
 	margin-top: 15px;
 	margin-left: 15px;
