@@ -96,6 +96,7 @@
 		<form class="form" action="./DeleteClient" method="get">
 			<input type="text" name="idToDelete" placeholder="ID a Eliminar">
 			<input type="submit">
+			<a class="cancel">Cancel</a>
 		</form>
 
 		<form class="formCM" action="./ModifyClient" method="get">
@@ -103,6 +104,7 @@
 			<input type="text" name="nameToModify" placeholder="Nombre a Modificar">
 			<input type="text" name="contactToModify" placeholder="Contacto a Modificar">
 			<input type="submit">
+			<a class="cancel">Cancel</a>
 		</form>
 
 </body>
@@ -110,14 +112,28 @@
 <script>
 	
 	$('.botonC').on('click', function(){
-                 //Validation
-        $('.form').fadeIn().css('display','block');
+    	$('.form').fadeIn().css('display','block');
+        
                 
     });
 
-    $('.botonMC').on('click', function(){
+    $('.cancel').on('click', function(){
+                 //Validation
+        $('.form').fadeOut().css('display','none');
+                
+    });
+
+
+
+	$('.botonMC').on('click', function(){
                  //Validation
         $('.formCM').fadeIn().css('display','block');
+                
+    });
+
+    $('.cancel').on('click', function(){
+                 //Validation
+        $('.formCM').fadeOut().css('display','none');
                 
     });
 

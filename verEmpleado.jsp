@@ -126,6 +126,7 @@
 		<form class="formE" action="./DeleteEmployee" method="get">
 			<input type="text" name="idToDelete" placeholder="ID a Eliminar">
 			<input type="submit">
+			<a class="cancel">Cancel</a>
 		</form>
 
 		<form class="formME" action="./ModifyEmployee" method="get">
@@ -137,6 +138,7 @@
 			<input type="text" name="contractToModify" placeholder="Número de Contrato">
 			<input type="text" name="settlementToModify" placeholder="Finiquito">
 			<input type="submit">
+			<a class="cancel">Cancel</a>
 		</form>
 
 </body>
@@ -144,14 +146,28 @@
 <script>
 	
 	$('.botonE').on('click', function(){
-                 //Validation
-        $('.formE').fadeIn().css('display','block');
+    	$('.formE').fadeIn().css('display','block');
+        
                 
     });
+
+    $('.cancel').on('click', function(){
+                 //Validation
+        $('.formE').fadeOut().css('display','none');
+                
+    });
+
+
 
 	$('.botonME').on('click', function(){
                  //Validation
         $('.formME').fadeIn().css('display','block');
+                
+    });
+
+    $('.cancel').on('click', function(){
+                 //Validation
+        $('.formME').fadeOut().css('display','none');
                 
     });
 
