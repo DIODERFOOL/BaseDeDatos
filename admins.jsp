@@ -106,7 +106,7 @@
 						</table>
 					</div>
 				</div>
-			<a id="button" class="lowButt clientesButton" href="./ShowClients">Ver</a>
+			<a id="button" class="lowButt" href="./ShowClients">Ver</a>
 		</div>
 
 		<div id="juicios">
@@ -160,7 +160,7 @@
 						</table>
 					</div>
 				</div>
-			<a id="button" class="lowButt juiciosButton" href="./ShowTrial">Ver</a>
+			<a id="button" class="lowButt" href="./ShowTrial">Ver</a>
 		</div>
 
 		<div id="empleados">
@@ -248,7 +248,7 @@
 					</div>
 				</div>
 -->
-			<a id="button" class="lowButt empleadosButton" href="./ShowEmployee">Ver</a>
+			<a id="button" class="lowButt2" href="./ShowEmployee">Ver</a>
 		</div>
 
 	</div>
