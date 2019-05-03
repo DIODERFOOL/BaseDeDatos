@@ -312,8 +312,17 @@ h3{
 /*----------------Form-------------------*/
 
 .form{
-	top: 90%;
+	top: 30%;
 	position: absolute;
-	right: 20%;
+	right: 10%;
 	display: none;
+}
+
+.botonC{
+	color: #6c7ae0;
+}
+
+.botonE{
+	background-color: #222222;
+	color: #00ad5f;
 }

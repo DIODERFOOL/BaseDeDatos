@@ -9,6 +9,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script type="text/javascript" src="js/jQuery.js"></script>
 	<link href="css/admins.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -61,6 +62,8 @@
 									<td class="cell100 column1"><c:out value="${em.settlement}" /></td>
 								</tr>
   								</c:forEach>
+  								<td class="cell100 column1"><input type="submit" value="Eliminar" class="botonE"></td>
+								<td class="cell100 column1"><input type="submit" value="Modificar" class="botonE"></td>
 							</tbody>
 						</table>
 					</div>
@@ -119,3 +122,10 @@
 		</div>
 </body>
 </html>
+
+
+
+
+
+
+

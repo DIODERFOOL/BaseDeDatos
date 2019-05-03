@@ -55,11 +55,12 @@
 											<td class="cell100 column1" name="perro"><c:out value="${us.companyID}" /></td>
 											<td class="cell100 column1"><c:out value="${us.name}" /></td>
 											<td class="cell100 column1"><c:out value="${us.contact}" /></td>
-											<td class="cell100 column1"><input type="submit" value="Eliminar" class="boton"></td>
-											<td class="cell100 column1"><input type="submit" value="Modificar" class="boton"></td>
+											
 										<!-- </form> -->
 									</tr>
 	  								</c:forEach>
+	  								<td class="cell100 column1"><input type="submit" value="Eliminar" class="botonC"></td>
+									<td class="cell100 column1"><input type="submit" value="Modificar" class="botonC"></td>
 								</tbody>
 							</table>
 					</div>
