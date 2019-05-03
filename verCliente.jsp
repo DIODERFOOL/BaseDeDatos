@@ -60,7 +60,7 @@
 									</tr>
 	  								</c:forEach>
 	  								<td class="cell100 column1"><input type="submit" value="Eliminar" class="botonC"></td>
-									<td class="cell100 column1"><input type="submit" value="Modificar" class="botonC"></td>
+									<td class="cell100 column1"><input type="submit" value="Modificar" class="botonMC"></td>
 								</tbody>
 							</table>
 					</div>
@@ -94,7 +94,7 @@
 		</div>
 
 		<form class="form" action="./DeleteClient" method="get">
-			<input type="text" name="perro" placeholder="ID a Eliminar">
+			<input type="text" name="idToDelete" placeholder="ID a Eliminar">
 			<input type="submit">
 		</form>
 
@@ -102,7 +102,7 @@
 
 <script>
 	
-	$('.boton').on('click', function(){
+	$('.botonC').on('click', function(){
                  //Validation
         $('.form').fadeIn().css('display','block');
                 

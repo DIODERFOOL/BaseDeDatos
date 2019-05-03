@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/DeleteClient")
-public class DeleteServlet extends HttpServlet{
+@WebServlet("/DeleteEmployee")
+public class DeleteEmployeeServlet extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -44,11 +44,11 @@ public class DeleteServlet extends HttpServlet{
 			String id = request.getParameter("idToDelete");
 			// String perro = "4";
 
-			int res = stat.executeUpdate("delete from client where CompanyId = " + id);
+			int res = stat.executeUpdate("delete from employee where Employee_Id = " + id);
 
 
 
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/ShowClients");
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/ShowEmployee");
 
 			if(disp!=null){
 				disp.forward(request,response);

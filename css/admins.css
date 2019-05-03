@@ -318,11 +318,31 @@ h3{
 	display: none;
 }
 
-.botonC{
+.formE{
+	top: 30%;
+	position: absolute;
+	right: 1%;
+	display: none;
+}
+
+.formT{
+	top: 30%;
+	position: absolute;
+	right: 1%;
+	display: none;
+}
+
+
+.botonC , .botonMC{
 	color: #6c7ae0;
 }
 
-.botonE{
+.botonME , .botonE{
 	background-color: #222222;
 	color: #00ad5f;
+}
+
+.botonMT , .botonT{
+	background-color: white;
+	color: #fa4251;
 }

@@ -38,7 +38,8 @@
 						<table>
 							<thead>
 								<tr class="row100 head">
-									<th class="cell100 column1">Fecha de Admisión</th>
+									<th class="cell100 column1">ID</th>
+									<th class="cell100 column2">Fecha de Admisión</th>
 									<th class="cell100 column2">Rol en la Compañía</th>
 									<th class="cell100 column2">Nombre del Empleado</th>
 									<th class="cell100 column2">Salario</th>
@@ -54,6 +55,7 @@
 							<tbody>
 								<c:forEach items="${requestScope.employeeList}" var="em">
 	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><c:out value="${em.employeeID}" /></td>
 									<td class="cell100 column1"><c:out value="${em.admissionDate}" /></td>
 									<td class="cell100 column1"><c:out value="${em.companyRole}" /></td>
 									<td class="cell100 column1"><c:out value="${em.name}" /></td>
@@ -63,7 +65,7 @@
 								</tr>
   								</c:forEach>
   								<td class="cell100 column1"><input type="submit" value="Eliminar" class="botonE"></td>
-								<td class="cell100 column1"><input type="submit" value="Modificar" class="botonE"></td>
+								<td class="cell100 column1"><input type="submit" value="Modificar" class="botonME"></td>
 							</tbody>
 						</table>
 					</div>
@@ -120,7 +122,24 @@
 -->
 			<!-- <a id="button" class="lowButt" href="verCliente.html">Ver</a> -->
 		</div>
+
+		<form class="formE" action="./DeleteEmployee" method="get">
+			<input type="text" name="idToDelete" placeholder="ID a Eliminar">
+			<input type="submit">
+		</form>
+
 </body>
+
+<script>
+	
+	$('.botonE').on('click', function(){
+                 //Validation
+        $('.formE').fadeIn().css('display','block');
+                
+    });
+
+</script>
+
 </html>
 
 

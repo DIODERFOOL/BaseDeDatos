@@ -9,6 +9,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script type="text/javascript" src="js/jQuery.js"></script>
 	<link href="css/admins.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -37,6 +38,7 @@
 						<table>
 							<thead>
 								<tr class="row100 head">
+									<th class="cell100 column1">ID</th>
 									<th class="cell100 column1">Locación</th>
 									<th class="cell100 column2">Fecha</th>
 								</tr>
@@ -49,10 +51,13 @@
 							<tbody>
 								<c:forEach items="${requestScope.trialList}" var="tr">
 	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><c:out value="${tr.trialID}" /></td>
 									<td class="cell100 column1"><c:out value="${tr.location}" /></td>
 									<td class="cell100 column1"><c:out value="${tr.trialDate}" /></td>
 								</tr>
   								</c:forEach>
+  								<td class="cell100 column1"><input type="submit" value="Eliminar" class="botonT"></td>
+								<td class="cell100 column1"><input type="submit" value="Modificar" class="botonMT"></td>
 							</tbody>
 						</table>
 					</div>
@@ -83,5 +88,24 @@
 				</div>
 			<!-- <a id="button" class="lowButt" href="verCliente.html">Ver</a> -->
 		</div>
+
+		<form class="formT" action="./DeleteTrial" method="get">
+			<input type="text" name="idToDelete" placeholder="ID a Eliminar">
+			<input type="submit">
+		</form>
+
+		
+
 </body>
+
+<script>
+	
+	$('.botonT').on('click', function(){
+                 //Validation
+        $('.formT').fadeIn().css('display','block');
+                
+    });
+
+
+</script>
 </html>
