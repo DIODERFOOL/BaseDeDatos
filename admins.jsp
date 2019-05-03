@@ -158,7 +158,7 @@
 						</table>
 					</div>
 				</div>
-			<a id="button" class="lowButt" href="verCliente.html">Ver</a>
+			<a id="button" class="lowButt" href="./ShowTrial">Ver</a>
 		</div>
 
 		<div id="empleados">
@@ -246,7 +246,7 @@
 					</div>
 				</div>
 -->
-			<a id="button" class="lowButt" href="verCliente.html">Ver</a>
+			<a id="button" class="lowButt" href="./ShowEmployee">Ver</a>
 		</div>
 
 	</div>

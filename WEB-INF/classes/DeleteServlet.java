@@ -5,8 +5,8 @@ import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/ShowClients")
-public class ShowClientServlet extends HttpServlet{
+@WebServlet("/DeleteClient")
+public class DeleteServlet extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -18,14 +18,14 @@ public class ShowClientServlet extends HttpServlet{
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
-		updateAdminTwo(request, response);
+		updateAdmin(request, response);
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response){
-		updateAdminTwo(request, response);
+		updateAdmin(request, response);
 	}
 
-	public void updateAdminTwo(HttpServletRequest request, HttpServletResponse response){
+	public void updateAdmin(HttpServletRequest request, HttpServletResponse response){
 
 		try{
 
@@ -41,30 +41,24 @@ public class ShowClientServlet extends HttpServlet{
 			Connection con = DriverManager.getConnection(url,dbusuario,dbpassword);
 			Statement stat = con.createStatement();
 
-			//------Connection to mySQL setup ENDS----------
+			String perro = request.getParameter("perro");
+			// String perro = "4";
 
-			ResultSet clientContents = stat.executeQuery("SELECT * from client join users on id_User=userID;");
-			Vector<Client> clientListShow = new Vector<Client>();
-			Vector<String> usernameListShow = new Vector<String>();
-
-			while(clientContents.next()){
-				Client aux = new Client(Long.valueOf(clientContents.getString("CompanyID")), clientContents.getString("name"), clientContents.getString("contact"), Long.valueOf(clientContents.getString("id_User")));
-				clientListShow.add(aux);
-				String responsibleUsername = clientContents.getString("username");
-				usernameListShow.add(responsibleUsername);
-			}
+			int res = stat.executeUpdate("delete from client where CompanyId = " + perro);
 
 
-			request.setAttribute("clientListShow",clientListShow);
-			request.setAttribute("usernameListShow",usernameListShow);
 
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/verCliente.jsp");
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/ShowClients");
+
 			if(disp!=null){
 				disp.forward(request,response);
 			}
+			//------JSP call forward ENDS ------
 
-			stat.close();
-			con.close();
+
+			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
+
+			// response.sendRedirect("./index.html?userRegister=1");
 
 		}
 		catch(Exception e){
@@ -72,4 +66,9 @@ public class ShowClientServlet extends HttpServlet{
 		}
 	}
 }
+
+
+
+
+
 
