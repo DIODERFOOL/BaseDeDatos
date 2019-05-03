@@ -1,49 +1,261 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-	<title>Dioses</title>
+	<title>Homepage - CILA</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/admins.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
-<body>
+<body onload="startTime()">
 	<header>
-		<h1>Corporativo Integral López Asociados, S.C.</h1>
+		<h1 id="headerAdmin">Corporativo Integral López Asociados, S.C.</h1>
+		<a href="./"><img src="img/logOut.png" id="logOutButt"></a>
 	</header>
-	
+
 	<div id="wrapper">
 
-		<div id="rightMenu">
-			<div id="photo">
-				<img src="img/avatar.jpg" id="avatar">
+		<div id="leftMenu">
+			<div id="clockSpace">
+				<!--<img src="img/blank-avatar.jpg" id="avatar">-->
+				<p>Bienvenido!</p><p>Son las:</p><p class="timeText"></p><p>del</p><p class="dateText"></p>
+
+				<!-- <p id="clock"></p> -->
 			</div>
-			<div class="rightMenuTable">
+			<div class="leftMenuTable">
 				<ul id="uls">
-					<a href="regArchivo.html"><li>Crear Archivo</li></a>
-					<a href="regCaso.html"><li>Crear Caso</li></a>
-					<a href="clientes.html"><li>Crear Cliente</li></a>
 					<a href="registerEmployee.html"><li>Crear Empleado</li></a>
-					<a href="pruebasBD.html"><li>Crear Empresa</li></a>
+					<a href="clientes.html"><li>Crear Cliente</li></a>
+					<a href="regJuicio.html"><li>Crear Juicio</li></a>
+					<a href="regLawsuit.html"><li>Crear Demanda</li></a>
+					<a href="regArchivo.html"><li>Crear Archivo</li></a>
+					<a href="register.html"><li>Crear Usuario</li></a>
+					<!--<form method="post" action="./dropDownClient"> <input type="submit" name="regJuicio" value="Crear Juicio"> </form>-->
 				</ul>
 			</div>
-			
 		</div>
 
 		<div id="clientes">
-			<p>Clientes</p>
-			<button id="button" class="lowButt">Ver</button>
+			<h3>CLIENTES</h3>
+			<div class="table100 ver1 m-b-110 floatingTable">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Nombre</th>
+									<th class="cell100 column2">Contacto</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+	  							<tr class="row100 body">
+									<td class="cell100 column1">Dos</td>
+									<td class="cell100 column1">Uno</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			<div class="table100 ver1 m-b-110 floatingTable">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Usuario Responsable</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								
+	  							<tr class="row100 body">
+									<td class="cell100 column1">Sup</td>
+								</tr>
+  								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			<!--<a id="button" class="lowButt" href="verCliente.html">Ver</a>-->
 		</div>
 
 		<div id="juicios">
-			<p>Juicios</p>
-			<button id="button" class="lowButt">Ver</button>
+			<h3>JUICIOS</h3>
+			<div class="table100 ver2 m-b-110 floatingTable2">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Locación</th>
+									<th class="cell100 column2">Fecha</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+	  							<tr class="row100 body">
+									<td class="cell100 column1">Prueba</td>
+									<td class="cell100 column1">Prueba</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			<div class="table100 ver2 m-b-110 floatingTable2">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Cliente</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+	  							<tr class="row100 body">
+									<td class="cell100 column1">Dos</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			<!--<a id="button" class="lowButt" href="verCliente.html">Ver</a>-->
 		</div>
 
 		<div id="empleados">
-			<p>Empleados</p>
-			<button id="button" class="lowButt2">Ver</button>
+			<h3>EMPLEADOS</h3>
+			<div class="table100 ver3 m-b-110 floatingTable3">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Fecha de Admisión</th>
+									<th class="cell100 column2">Rol en la Compañía</th>
+									<th class="cell100 column2">Nombre del Empleado</th>
+									<th class="cell100 column2">Salario</th>
+									<th class="cell100 column2">Código de Contrato</th>
+									<th class="cell100 column2">Finiquito</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+	  							<tr class="row100 body">
+									<td class="cell100 column1">asdf</td>
+									<td class="cell100 column1">asdf</td>
+									<td class="cell100 column1">asdf</td>
+									<td class="cell100 column1">asdf</td>
+									<td class="cell100 column1">asdf</td>
+									<td class="cell100 column1">asdf</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+<!--
+			<div class="table100 ver2 m-b-110 floatingTable3">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Cliente</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.clientNamesList2}" var="em2">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${em2}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			<div class="table100 ver2 m-b-110 floatingTable3">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Fecha del Juicio</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.trialList2}" var="em3">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${em3}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+-->
+			<!--<a id="button" class="lowButt" href="verCliente.html">Ver</a>-->
 		</div>
 
 	</div>
 </body>
+<script>
+	currentTime();
+
+	function currentTime(){
+		var today = new Date();
+		var date = today.getDate() + ' de ' + today.toLocaleString('es-us', { month: 'long' }) + ' del ' + today.getFullYear();
+		var time = checkTime(today.getHours()) + ":" + checkTime(today.getMinutes()) + ":" + checkTime(today.getSeconds());
+		$('.dateText').html(date);
+		$('.timeText').html(time);
+		var t = setTimeout(currentTime, 500);
+	}
+
+	function checkTime(i) {
+	  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+	  return i;
+	}
+
+
+</script>
 </html>
