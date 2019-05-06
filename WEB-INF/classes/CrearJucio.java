@@ -74,7 +74,6 @@ public class CrearJucio extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
 			try{
     		RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
         	if(disp!=null){

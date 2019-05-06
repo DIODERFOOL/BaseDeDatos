@@ -88,7 +88,6 @@ public class CrearEmpleado extends HttpServlet{
 		catch(Exception e){
 			e.printStackTrace();
 			try{
-<<<<<<< HEAD
     		RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
         	if(disp!=null){
           	disp.forward(request,response);
@@ -96,15 +95,6 @@ public class CrearEmpleado extends HttpServlet{
         } catch(Exception e2){
 
 				}
-=======
-				RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
-				if(disp!=null){
-					disp.forward(request,response);
-				}
-			}
-			catch(Exception e2){
-			}
->>>>>>> e0eea4e35326bd1998cf09ce029b69b88bf8e5a3
 		}
 	}
 }
