@@ -76,6 +76,14 @@ public class ShowTrialServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
+			try{
+    		RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
+        	if(disp!=null){
+          	disp.forward(request,response);
+          }
+        } catch(Exception e2){
+
+				}
 		}
 	}
 }

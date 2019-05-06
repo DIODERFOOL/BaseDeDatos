@@ -71,7 +71,14 @@ public class ModifyTrialServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
+			try{
+    		RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
+        	if(disp!=null){
+          	disp.forward(request,response);
+          }
+        } catch(Exception e2){
+
+				}
 		}
 	}
 }
