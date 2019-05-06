@@ -176,7 +176,7 @@ p .centerText{
 
 /*--------------Centro-------------------*/
 
-#clientes, #juicios, #empleados{
+#clientes, #juicios, #empleados, #demanda, #archivo{
 	width: 84%;
 	background-color: transparent;
 	float: right;
