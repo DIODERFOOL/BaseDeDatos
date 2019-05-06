@@ -37,19 +37,23 @@ public class NewLawsuit extends HttpServlet{
 			//------Connection to mySQL setup ENDS----------
 
 			//------User register STARTS------
-			Random r = new Random();
-			int low = 1;
-			int high = 6;
-			int result = r.nextInt(high-low) + low;
+
 
 
 			//retrieve values from register's forms
 			String name = request.getParameter("sName");
 			String reclamo = request.getParameter("sReclamo");
 			String direccion = request.getParameter("sDireccion");
-			int trial_id = result;
+			String trial_id = request.getParameter("fkUser");
 			// String password = request.getParameter("addPW");
 			// String role = request.getParameter("addForma");
+
+
+			trial_id = trial_id.substring(1, trial_id.length()-1);
+			ResultSet resfk = stat.executeQuery("SELECT TrialId FROM trial WHERE location = \"" + trial_id + "\";");
+			int fkey = 1;
+			resfk.next();
+			fkey = Integer.valueOf(resfk.getString("TrialId"));
 
 			//save values in database
 			int res = stat.executeUpdate("insert into lawsuit(name, affair, address, trial_id) VALUES (\"" + name + "\", \"" + reclamo + "\", \"" + direccion + "\", \"" + trial_id + "\");");
