@@ -18,19 +18,11 @@ public class DeleteServlet extends HttpServlet{
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
-		try {
 			updateAdmin(request, response);
-		} catch(Excpetion e) {
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
-		}
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response){
-		try {
 			updateAdmin(request, response);
-		} catch(Excpetion e) {
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
-		}
 	}
 
 	public void updateAdmin(HttpServletRequest request, HttpServletResponse response){
@@ -72,6 +64,7 @@ public class DeleteServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
 		}
 	}
 }
