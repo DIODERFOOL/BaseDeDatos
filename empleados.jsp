@@ -29,13 +29,14 @@
 <body>
 	<header>
 		<h1 id="headerAdmin">Corporativo Integral López Asociados, S.C.</h1>
+		<a href="./"><img src="img/logOut.png" id="logOutButt"></a>
 	</header>
 	
 	<div id="wrapper">
 
 		<div id="clientes">
 			<h3>CLIENTES</h3>
-			<div class="table100 ver1 m-b-110 floatingTable">
+			<div class="table100 ver1 m-b-10 floatingTable">
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -61,7 +62,7 @@
 					</div>
 				</div>
 			
-			<div class="table100 ver3 m-b-110 floatingTable">
+			<div class="table100 ver3 m-b-10 floatingTable">
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -89,7 +90,7 @@
 
 		<div id="juicios">
 			<h3>JUICIOS</h3>
-			<div class="table100 ver2 m-b-110 floatingTable2">
+			<div class="table100 ver1 m-b-10 floatingTable2">
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -115,7 +116,7 @@
 					</div>
 				</div>
 			
-			<div class="table100 ver2 m-b-110 floatingTable2">
+			<div class="table100 ver1 m-b-10 floatingTable2">
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -138,8 +139,72 @@
 						</table>
 					</div>
 				</div>
-			<!--<a id="button" class="lowButt" href="verCliente.html">Ver</a>-->
 		</div>
+
+		<div id="demanda">
+			<h3>DEMANDAS</h3>
+			<div class="table100 ver2 m-b-10 floatingTable2">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Nombre</th>
+									<th class="cell100 column2">Reclamo</th>
+									<th class="cell100 column2">Dirección de la Demanda</th>
+									<th class="cell100 column2">Locación del Juicio Asociado</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.lawsuitList}" var="lw">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${lw.name}" /></td>
+									<td class="cell100 column1"><c:out value="${lw.affair}" /></td>
+									<td class="cell100 column1"><c:out value="${lw.address}" /></td>
+									<td class="cell100 column1"><c:out value="${lw.trialLocation}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+		</div>
+		
+		<div id="archivo">
+			<h3>ARCHIVOS</h3>
+			<div class="table100 ver2 m-b-10 floatingTable2">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Nombre</th>
+									<th class="cell100 column2">Fecha de Creación</th>
+									<th class="cell100 column2">Demanda Asociada</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.fileList}" var="fl">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${fl.name}" /></td>
+									<td class="cell100 column1"><c:out value="${fl.creationDate}" /></td>
+									<td class="cell100 column1"><c:out value="${fl.lawsuitName}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+		</div>
+
 	</div>
 </body>
 </html>
