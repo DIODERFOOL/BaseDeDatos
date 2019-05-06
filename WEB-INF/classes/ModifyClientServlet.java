@@ -14,7 +14,7 @@ public class ModifyClientServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
@@ -46,7 +46,7 @@ public class ModifyClientServlet extends HttpServlet{
 			String id = request.getParameter("idToModify");
 			String name = request.getParameter("nameToModify");
 			// if(request.getParameter("contactToModify")!=null){
-				String contact = request.getParameter("contactToModify");	
+				String contact = request.getParameter("contactToModify");
 			// }else{
 			// 	String contact = client.getContact();
 			// }
@@ -71,12 +71,7 @@ public class ModifyClientServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
 		}
 	}
 }
-
-
-
-
-
-

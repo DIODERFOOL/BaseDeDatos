@@ -14,15 +14,23 @@ public class ModifyEmployeeServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
-		updateAdmin(request, response);
+		try {
+			updateAdmin(request, response);
+		} catch(Excpetion e) {
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
+		}
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response){
-		updateAdmin(request, response);
+		try {
+			updateAdmin(request, response);
+		} catch(Excpetion e) {
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
+		}
 	}
 
 	public void updateAdmin(HttpServletRequest request, HttpServletResponse response){
@@ -53,7 +61,7 @@ public class ModifyEmployeeServlet extends HttpServlet{
 			String role = request.getParameter("roleToModify");
 			String salary = request.getParameter("salaryToModify");
 			String contract = request.getParameter("contractToModify");
-			String settlement = request.getParameter("settlementToModify");	
+			String settlement = request.getParameter("settlementToModify");
 			// }else{
 			// 	String contact = client.getContact();
 			// }
@@ -81,9 +89,3 @@ public class ModifyEmployeeServlet extends HttpServlet{
 		}
 	}
 }
-
-
-
-
-
-
