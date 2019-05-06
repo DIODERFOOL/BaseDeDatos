@@ -42,17 +42,17 @@
 
 				<!-- <p id="clock"></p> -->
 			</div>
-			<div class="leftMenuTable">
-				<ul id="uls">
-					<a href="register.html"><li>Crear Usuario</li></a>
-					<a href="clientes.html"><li>Crear Cliente</li></a>
-					<a href="regJuicio.html"><li>Crear Juicio</li></a>
-					<a href="regLawsuit.html"><li>Crear Demanda</li></a>
-					<a href="regArchivo.html"><li>Crear Archivo</li></a>
-					<a href="registerEmployee.html"><li>Crear Empleado</li></a>
-					<!--<form method="post" action="./dropDownClient"> <input type="submit" name="regJuicio" value="Crear Juicio"> </form>-->
-				</ul>
-			</div>
+				<div class="leftMenuTable">
+					<ul id="uls">
+						<a href="./CrearUsuario"><li>Crear Usuario</li></a>
+						<a href="./CrearCliente"><li>Crear Cliente</li></a>
+						<a href="./CrearJuicio"><li>Crear Juicio</li></a>
+						<a href="./CrearDemanda"><li>Crear Demanda</li></a>
+						<a href="./CrearArchivo"><li>Crear Archivo</li></a>
+						<a href="./CrearEmpleado"><li>Crear Empleado</li></a>
+						<!--<form method="post" action="./dropDownClient"> <input type="submit" name="regJuicio" value="Crear Juicio"> </form>-->
+					</ul>
+				</div>
 		</div>
 
 		<div id="clientes">
