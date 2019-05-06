@@ -178,6 +178,10 @@ form, #forTables, #center{
 
 /*------------------------Error Page------------------------------*/
 
+#center{
+    width: 40%;
+}
+
 h2{
     color: red;
     text-align: center;
