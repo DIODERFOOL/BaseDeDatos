@@ -33,7 +33,7 @@
             <br>
             <br>
 
-            <a id="button" class="lowButt" href="./RefreshServlet">Regresar</a>
+            <a id="button" class="lowButt" href="./AdminRefresh">Regresar</a>
 
         </div>
     </section>
