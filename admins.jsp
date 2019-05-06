@@ -282,7 +282,7 @@
 						</table>
 					</div>
 				</div>
-			<a id="button" class="lowButt" href="#">Ver</a>
+			<a id="button" class="lowButt" href="./ShowLawsuit">Ver</a>
 		</div>
 		
 		<div id="archivo">

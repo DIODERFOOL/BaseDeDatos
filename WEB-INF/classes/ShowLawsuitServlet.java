@@ -41,31 +41,16 @@ public class ShowLawsuitServlet extends HttpServlet{
 			Connection con = DriverManager.getConnection(url,dbusuario,dbpassword);
 			Statement stat = con.createStatement();
 
-			ResultSet lawsuitContents = stat.executeQuery("select * from lawsuit join trial on idClient=trials_id;");
-			Vector<Lawsuit> lawsuitList = new Vector<Lawsuit>();
-			Vector<String> clientNamesList = new Vector<String>();
+			ResultSet lawsuitContents = stat.executeQuery("select * from lawsuit join trial on trial_id = TrialId;");
+			Vector<LawsuitQuery> lawsuitList = new Vector<LawsuitQuery>();
 
 			while(lawsuitContents.next()){
-
-				//Date format correction
-				String reformatDate = trialContents.getString("trialDate");
-				//2018-mm-dd -> dd-mm-2018
-				String day = reformatDate.substring(8);
-				String month = reformatDate.substring(5,7);
-				String year =  reformatDate.substring(0,4);
-				reformatDate = day + "/" + month + "/" + year;
-				//Date format correction ends
-
-				Lawsuit aux = new Lawsuit(Long.valueOf(trialContents.getString("TrialID")), trialContents.getString("location"), reformatDate, Long.valueOf(trialContents.getString("idClient")));
-				trialList.add(aux);
-				String clientName = trialContents.getString("name");
-				clientNamesList.add(clientName);
+				LawsuitQuery aux = new LawsuitQuery(Long.valueOf(lawsuitContents.getString("LawsuitID")), lawsuitContents.getString("name"), lawsuitContents.getString("affair"), lawsuitContents.getString("address"), Long.valueOf(lawsuitContents.getString("trial_id")), lawsuitContents.getString("location"));
+				lawsuitList.add(aux);
 			}
+			request.setAttribute("lawsuitList",lawsuitList);
 
-			request.setAttribute("trialList",trialList);
-			request.setAttribute("clientNamesList",clientNamesList);
-
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/verJuicio.jsp");
+			RequestDispatcher disp = getServletContext().getRequestDispatcher("/verDemanda.jsp");
 			if(disp!=null){
 				disp.forward(request,response);
 			}
