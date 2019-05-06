@@ -35,9 +35,9 @@
 		<a class="lupa"><img src="img/lupa.png"></a>
 	</div>
 
-	<form class="searchC" action="./DeleteClient" method="get">
-			<input type="text" name="nameForSearch" placeholder="Nombre">
-			<input type="submit">
+	<form class="searchC" action="./SearchClient" method="post">
+		<input type="text" name="nameForSearch" placeholder="Nombre">
+		<input type="submit">
 	</form>
 
 	<div id="clientesVer">
@@ -143,6 +143,12 @@
     $('.cancel').on('click', function(){
                  //Validation
         $('.formCM').fadeOut().css('display','none');
+                
+    });
+
+    $('.lupa').on('click', function(){
+                 //Validation
+        $('.searchC').fadeIn().css('display','block');
                 
     });
 
