@@ -6,7 +6,7 @@ import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 import java.util.Random;
 
-@WebServlet("/CreateFile")
+@WebServlet("/RegisterFile")
 public class NewFileServlet extends HttpServlet{
 
 	public void init(ServletConfig config){
@@ -36,23 +36,18 @@ public class NewFileServlet extends HttpServlet{
 
 			//------Connection to mySQL setup ENDS----------
 
-			//------File creation STARTS------
-			Random r = new Random();
-			int low = 1;
-			int high = 6;
-			int result = r.nextInt(high-low) + low;
-
 			//retrieve values from register's forms
 			String name = request.getParameter("addName");
 			String date = request.getParameter("addContacto");
-			int lawsuit_id = result;
+			String lawsuitName = request.getParameter("fkLawsuit");
+			lawsuitName = lawsuitName.substring(1, lawsuitName.length()-1);
+			ResultSet resfk = stat.executeQuery("select lawsuitId from lawsuit where name = \"" + lawsuitName + "\";");
+			int fkey = 1;
+			resfk.next();
+			fkey = Integer.valueOf(resfk.getString("lawsuitID"));
 
 			//save values in database
-			int res = stat.executeUpdate("insert into file(name, creation_date, lawsuit_id) VALUES (\"" + name + "\", \"" + date + "\", \"" + lawsuit_id + "\");");
-
-			//!!!!!!---------   DEBUGGING - For class presentation only - Creating a JSP with all registered users example !!!!!!---------
-
-
+			int res = stat.executeUpdate("insert into file(name, creation_date, lawsuit_id) VALUES (\"" + name + "\", \"" + date + "\", \"" + fkey + "\");");
 			ResultSet res2 = stat.executeQuery("SELECT * FROM file ORDER BY idFile DESC LIMIT 1;");
 			Vector<File> fileList = new Vector<File>();
 

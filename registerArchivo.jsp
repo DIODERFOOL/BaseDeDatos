@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Creación Archivos</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link href="css/regstyle2.css" rel ="stylesheet">
 </head>
@@ -18,11 +18,15 @@
     </header>
 
     <section id="start">
-        <form id="form" action="./CreateFile" method="post">
+        <form id="form" action="./RegisterFile" method="post">
             <p>Crear Archivo</p>
             <input type="text" required placeholder="Nombre" class="inp" name="addName" id="addName">
             <input type="date" class="inp" name="addContacto" id="addContacto">
-            <!-- <input type="text" placeholder="Forma Jurídica" class="inp" id="addForma"> -->
+			<select class="inp" name="fkLawsuit" id="addForma">
+							<c:forEach items="${requestScope.lawsuitList}" var="lw">
+	            	<option value=" <c:out value="${lw.name}" /> "> <c:out value="${lw.name}" /> </option>
+							</c:forEach>
+	        </select>
             <input type="submit" value="Registrar" id="button">
         </form>
         <div class="reg-error"></div>
