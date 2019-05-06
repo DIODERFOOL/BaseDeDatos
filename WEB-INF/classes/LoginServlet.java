@@ -72,6 +72,23 @@ public class LoginServlet extends HttpServlet{
 							String responsibleUsername = clientContents.getString("username");
 							usernameList.add(responsibleUsername);
 						}
+						clientList.trimToSize();
+						usernameList.trimToSize();
+
+						if(clientList.size() > 3){
+							Vector<Client> alterclientList = new Vector<Client>();
+							Vector<String> alterusernameList = new Vector<String>();
+							for(int j=3; j>0; j--){
+								alterclientList.add(clientList.get(clientList.size()-j));
+								alterusernameList.add(usernameList.get(usernameList.size()-j));
+							}
+							request.setAttribute("clientList",alterclientList);
+							request.setAttribute("usernameList",alterusernameList);
+						}
+						else{
+							request.setAttribute("clientList",clientList);
+							request.setAttribute("usernameList",usernameList);
+						}
 
 						ResultSet trialContents = stat.executeQuery("select * from trial join client on idClient=CompanyId;");
 						Vector<Trial> trialList = new Vector<Trial>();
@@ -93,6 +110,22 @@ public class LoginServlet extends HttpServlet{
 							String clientName = trialContents.getString("name");
 							clientNamesList.add(clientName);
 						}
+
+						if(trialList.size() > 3){
+							Vector<Trial> altertrialList = new Vector<Trial>();
+							Vector<String> alterclientNamesList = new Vector<String>();
+							for(int j=3; j>0; j--){
+								altertrialList.add(trialList.get(trialList.size()-j));
+								alterclientNamesList.add(clientNamesList.get(clientNamesList.size()-j));
+							}
+							request.setAttribute("trialList",altertrialList);
+							request.setAttribute("clientNamesList",alterclientNamesList);
+						}
+						else{
+							request.setAttribute("trialList",trialList);
+							request.setAttribute("clientNamesList",clientNamesList);
+						}
+
 
 						ResultSet employeeContents = stat.executeQuery("select * from employee, trial, client where idTrial = TrialId and idClient = CompanyId;");
 						Vector<Employee> employeeList = new Vector<Employee>();
@@ -118,12 +151,42 @@ public class LoginServlet extends HttpServlet{
 							clientNamesList2.add(clientName2);
 						}
 
+						if(employeeList.size() > 3){
+							Vector<Employee> alteremployeeList = new Vector<Employee>();
+							Vector<String> altertrialList2 = new Vector<String>();
+							Vector<String> alterclientNamesList2 = new Vector<String>();
+							for(int j=3; j>0; j--){
+								alteremployeeList.add(employeeList.get(employeeList.size()-j));
+								altertrialList2.add(trialList2.get(trialList2.size()-j));
+								alterclientNamesList2.add(clientNamesList2.get(clientNamesList2.size()-j));
+							}
+							request.setAttribute("employeeList",alteremployeeList);
+							request.setAttribute("trialList2",altertrialList2);
+							request.setAttribute("clientNamesList2",alterclientNamesList2);
+						}
+						else{
+							request.setAttribute("employeeList",employeeList);
+							request.setAttribute("trialList2",trialList2);
+							request.setAttribute("clientNamesList2",clientNamesList2);
+						}
+
 						ResultSet lawsuitContents = stat.executeQuery("select * from lawsuit join trial on trial_id = TrialId;");
 						Vector<LawsuitQuery> lawsuitList = new Vector<LawsuitQuery>();
 
 						while(lawsuitContents.next()){
 							LawsuitQuery aux = new LawsuitQuery(Long.valueOf(lawsuitContents.getString("LawsuitID")), lawsuitContents.getString("name"), lawsuitContents.getString("affair"), lawsuitContents.getString("address"), Long.valueOf(lawsuitContents.getString("trial_id")), lawsuitContents.getString("location"));
 							lawsuitList.add(aux);
+						}
+
+						if(lawsuitList.size() > 3){
+							Vector<LawsuitQuery> alterlawsuitList = new Vector<LawsuitQuery>();
+							for(int j=3; j>0; j--){
+								alterlawsuitList.add(lawsuitList.get(lawsuitList.size()-j));
+							}
+							request.setAttribute("lawsuitList", alterlawsuitList);
+						}
+						else{
+							request.setAttribute("lawsuitList", lawsuitList);
 						}
 
 						ResultSet fileContents = stat.executeQuery("select * from file join lawsuit on lawsuit_id = LawsuitId;");
@@ -133,16 +196,16 @@ public class LoginServlet extends HttpServlet{
 							FileQuery aux = new FileQuery(Long.valueOf(fileContents.getString("idFile")), fileContents.getString("name"), fileContents.getString("creation_date"), Long.valueOf(fileContents.getString("lawsuit_id")), fileContents.getString("Lawsuit.name"));
 							fileList.add(aux);
 						}
-
-						request.setAttribute("clientList",clientList);
-						request.setAttribute("usernameList",usernameList);
-						request.setAttribute("trialList",trialList);
-						request.setAttribute("clientNamesList",clientNamesList);
-						request.setAttribute("employeeList",employeeList);
-						request.setAttribute("trialList2",trialList2);
-						request.setAttribute("clientNamesList2",clientNamesList2);
-						request.setAttribute("lawsuitList", lawsuitList);
-						request.setAttribute("fileList", fileList);
+						if(fileList.size() > 3){
+							Vector<FileQuery> alterfileList = new Vector<FileQuery>();
+							for(int j=3; j>0; j--){
+								alterfileList.add(fileList.get(fileList.size()-j));
+							}
+							request.setAttribute("fileList", alterfileList);
+						}
+						else{
+							request.setAttribute("fileList", fileList);
+						}
 
 						if(userList.get(i).getRole().equals("Super Empleado")){
 							//Super Empleado Login
