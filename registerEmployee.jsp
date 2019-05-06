@@ -35,7 +35,17 @@
                         <input type="text" required placeholder="Salario Integral" class="inp" name="addSettlement" id="settlement">
                         <input type="date" placeholder="Fecha de Admisión" class="inp" name="addAdmisDate" id="admissionDate">
                         <input type="text" required placeholder="Contrato" class="inp" name="addContractCode" id="contractCode">
-						<input type="text"  required placeholder="Rol" class="inp" name="addForma" id="addForma">
+						            <input type="text"  required placeholder="Rol" class="inp" name="addForma" id="addForma">
+                        <select class="inp" name="fkTrial" id="addForma">
+              						<c:forEach items="${requestScope.trialList}" var="us">
+              	            <option value=" <c:out value="${us.location}" /> "> <c:out value="${us.location}" /> </option>
+              						</c:forEach>
+              	         </select>
+                         <select class="inp" name="fkClient" id="addForma">
+             							<c:forEach items="${requestScope.clientList}" var="us">
+             	            	<option value=" <c:out value="${us.name}" /> "> <c:out value="${us.name}" /> </option>
+             							</c:forEach>
+             	          </select>
 						<br><br><br>
                         <input type="submit" value="Crear" id="button">
                     </form>

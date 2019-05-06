@@ -4,10 +4,9 @@ import javax.servlet.http.*;
 import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
-import java.util.Random;
 
-@WebServlet("/CreateTrial")
-public class NewTrialServlet extends HttpServlet{
+@WebServlet("/CrearEmpleado")
+public class CrearEmpleado extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -19,6 +18,14 @@ public class NewTrialServlet extends HttpServlet{
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
+		updateAdmin(request, response);
+	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response){
+		updateAdmin(request, response);
+	}
+
+	public void updateAdmin(HttpServletRequest request, HttpServletResponse response){
 
 		try{
 
@@ -34,30 +41,8 @@ public class NewTrialServlet extends HttpServlet{
 			Connection con = DriverManager.getConnection(url,dbusuario,dbpassword);
 			Statement stat = con.createStatement();
 
-			//------Connection to mySQL setup ENDS----------
-
-			//------Trial creation STARTS------
-
-			//retrieve values from register's forms
-
-
-			String address = request.getParameter("addAddress");
-			String date = request.getParameter("addDate");
-			String idClient = request.getParameter("fkUser");
-
-			idClient = idClient.substring(1, idClient.length()-1);
-			ResultSet resfk = stat.executeQuery("SELECT CompanyID FROM client WHERE name = \"" + idClient + "\";");
-			int fkey = 1;
-			resfk.next();
-			fkey = Integer.valueOf(resfk.getString("CompanyID"));
-
-			//save values in the database
-			int res = stat.executeUpdate("insert into trial(location, trialDate, idClient) VALUES (\"" + address + "\", \"" + date + "\", \"" + idClient + "\");");
-
-			//!!!!!!---------   DEBUGGING - For class presentation only - Creating a JSP with all registered users example !!!!!!---------
-
-			ResultSet res2 = stat.executeQuery("SELECT * FROM trial ORDER BY TrialId DESC LIMIT 1;");
-			Vector<Trial> trialList = new Vector<Trial>();
+      ResultSet res2 = stat.executeQuery("SELECT * FROM trial;");
+      Vector<Trial> trialList = new Vector<Trial>();
 
 			while(res2.next()){
 				//Corregir formato de la fecha para impresión en el jsp
@@ -71,17 +56,35 @@ public class NewTrialServlet extends HttpServlet{
 				trialList.add(aux);
 			}
 
+      ResultSet res3 = stat.executeQuery("SELECT * FROM client;");
+			Vector<Client> clientList = new Vector<Client>();
+
+			while(res3.next()){
+				Client aux = new Client(res3.getLong("companyID"),res3.getString("name"), res3.getString("contact"), res3.getLong("id_User"));
+				clientList.add(aux);
+			}
+
 			stat.close();
 			con.close();
 
 			request.setAttribute("trialList",trialList);
-			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/confirmacionJuicio.jsp");
+      request.setAttribute("clientList",clientList);
+
+
+
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/registerEmployee.jsp");
 
 			if(disp!=null){
 				disp.forward(request,response);
 			}
-		}
+			//------JSP call forward ENDS ------
 
+
+			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
+
+			// response.sendRedirect("./index.html?userRegister=1");
+
+		}
 		catch(Exception e){
 			e.printStackTrace();
 		}

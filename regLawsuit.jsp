@@ -23,6 +23,11 @@
             <input type="text" required placeholder="Nombre" name="sName" class="inp" id="addName">
             <input type="text" required placeholder="Reclamo" name="sReclamo" class="inp" id="addAffair">
             <input type="text" placeholder="Dirección de la demana" name="sDireccion" class="inp" id="addForma">
+            <select class="inp" name="fkUser" id="addForma">
+    					<c:forEach items="${requestScope.trialList}" var="us">
+    	           <option value=" <c:out value="${us.location}" /> "> <c:out value="${us.location}" /> </option>
+    					</c:forEach>
+    	      </select>
             <input type="submit" value="Crear Demanda" id="button">
         </form>
         <div class="reg-error"></div>

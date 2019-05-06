@@ -314,7 +314,7 @@
 						</table>
 					</div>
 				</div>
-			<a id="button" class="lowButt" href="#">Ver</a>
+			<a id="button" class="lowButt" href="./ShowFile">Ver</a>
 		</div>
 
 	</div>
