@@ -301,6 +301,16 @@ h3{
 	display: block;
 }
 
+#archivoVer{
+	width: 65%;
+	height: 50%;
+	background-color: transparent;
+	position: absolute;	
+	left: 15%;
+	top:  15%;
+	display: block;
+}
+
 /*----------------Form-------------------*/
 
 .form{
@@ -325,6 +335,13 @@ h3{
 }
 
 .formD{
+	top: 30%;
+	position: absolute;
+	right: 1%;
+	display: none;
+}
+
+.formA{
 	top: 30%;
 	position: absolute;
 	right: 1%;
@@ -367,6 +384,13 @@ h3{
 }
 
 .formMD{
+	top: 30%;
+	position: absolute;
+	right: 10%;
+	display: none;
+}
+
+.formMA{
 	top: 30%;
 	position: absolute;
 	right: 10%;
