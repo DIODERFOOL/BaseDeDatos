@@ -47,20 +47,20 @@ public class NewEmployeeServlet extends HttpServlet{
 			String admissionDate = request.getParameter("addAdmisDate");
 			String contractCode = request.getParameter("addContractCode");
 			String role = request.getParameter("addForma");
-			int idTRial = request.getParameter("fkTrial");
-			int company_id = request.getParameter("fkClient");
+			String idTRial = request.getParameter("fkTrial");
+			String company_id = request.getParameter("fkClient");
 
 			idTRial = idTRial.substring(1, idTRial.length()-1);
 			ResultSet resfk1 = stat.executeQuery("SELECT TrialId FROM trial WHERE location = \"" + idTRial + "\";");
 			int fkey = 1;
-			resfk.next();
+			resfk1.next();
 			fkey = Integer.valueOf(resfk1.getString("TrialId"));
 
 			company_id = company_id.substring(1, company_id.length()-1);
 			ResultSet resfk = stat.executeQuery("SELECT CompanyID FROM client WHERE name = \"" + company_id + "\";");
-			int fkey = 1;
+			int fkey1 = 1;
 			resfk.next();
-			fkey = Integer.valueOf(resfk.getString("CompanyId"));
+			fkey1 = Integer.valueOf(resfk.getString("CompanyId"));
 
 			//save values in database
 			int res = stat.executeUpdate("insert into employee(name, salary, settlement, admission_date, contractCode, company_role, idTrial, company_id) VALUES (\"" + name + "\", \"" + salary + "\", \"" + settlement + "\", \"" + admissionDate + "\" , \"" + contractCode + "\" , \"" + role + "\",  \"" + idTRial + "\",  \"" + company_id + "\");");
