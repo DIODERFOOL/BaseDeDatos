@@ -45,7 +45,7 @@ public class CrearJucio extends HttpServlet{
 			Vector<Client> clientList = new Vector<Client>();
 
 			while(res2.next()){
-				Client aux = new Client(res2.getLong("companyID"),res2.getString("name"), res2.getString("contact"), res2.getLong("id_User"));
+				Client aux = new Client(res2.getLong("CompanyID"),res2.getString("name"), res2.getString("contact"), res2.getLong("id_User"));
 				clientList.add(aux);
 			}
 
