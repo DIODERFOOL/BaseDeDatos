@@ -5,7 +5,7 @@
 
 <html>
 <head>
-	<title>Demanda</title>
+	<title>Archivos</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -31,8 +31,8 @@
 		<a href="./AdminRefresh"><img src="img/left_Arrow.png" id="backArrow"></a>
 	</header>
 
-	<div id="demandaVer">
-			<h3>DEMANDAS</h3>
+	<div id="archivoVer">
+			<h3>ARCHIVOS</h3>
 			<div class="table100 ver2 m-b-110 floatingTable2">
 					<div class="table100-head">
 						<table>
@@ -40,9 +40,8 @@
 								<tr class="row100 head">
 									<th class="cell100 column1">ID</th>
 									<th class="cell100 column2">Nombre</th>
-									<th class="cell100 column2">Reclamo</th>
-									<th class="cell100 column2">Dirección de la Demanda</th>
-									<th class="cell100 column2">Locación del Juicio Asociado</th>
+									<th class="cell100 column2">Fecha de Creación</th>
+									<th class="cell100 column2">Demanda Asociada</th>
 								</tr>
 							</thead>
 						</table>
@@ -51,34 +50,32 @@
 					<div class="table100-body js-pscroll">
 						<table>
 							<tbody>
-								<c:forEach items="${requestScope.lawsuitList}" var="lw">
+								<c:forEach items="${requestScope.fileList}" var="fl">
 	  							<tr class="row100 body">
-	  								<td class="cell100 column1"><c:out value="${lw.lawsuitID}" /></td>
-									<td class="cell100 column1"><c:out value="${lw.name}" /></td>
-									<td class="cell100 column1"><c:out value="${lw.affair}" /></td>
-									<td class="cell100 column1"><c:out value="${lw.address}" /></td>
-									<td class="cell100 column1"><c:out value="${lw.trialLocation}" /></td>
+	  								<td class="cell100 column1"><c:out value="${fl.idFile}" /></td>
+									<td class="cell100 column1"><c:out value="${fl.name}" /></td>
+									<td class="cell100 column1"><c:out value="${fl.creationDate}" /></td>
+									<td class="cell100 column1"><c:out value="${fl.lawsuitName}" /></td>
 								</tr>
   								</c:forEach>
-  								<td class="cell100 column1"><input type="submit" value="Eliminar" class="botonD"></td>
-								<td class="cell100 column1"><input type="submit" value="Modificar" class="botonMD"></td>
+  								<td class="cell100 column1"><input type="submit" value="Eliminar" class="botonA"></td>
+								<td class="cell100 column1"><input type="submit" value="Modificar" class="botonMA"></td>
 							</tbody>
 						</table>
 					</div>
 				</div>
 		</div>
 
-		<form class="formD" action="./DeleteLawsuit" method="get">
+		<form class="formA" action="./DeleteFile" method="get">
 			<input type="text" name="idToDelete" placeholder="ID a Eliminar">
 			<input type="submit">
 			<a class="cancel">Cancel</a>
 		</form>
 
-		<form class="formMD" action="./ModifyLawsuit" method="get">
+		<form class="formMA" action="./ModifyFile" method="get">
 			<input type="text" name="idToModify" placeholder="ID a Modificar">
 			<input type="text" name="nameToModify" placeholder="Nombre">
-			<input type="text" name="affairToModify" placeholder="Reclamo">
-			<input type="text" name="addressToModify" placeholder="Dirección">
+			<input type="date" name="dateToModify" placeholder="Fecha">
 			<input type="submit">
 			<a class="cancel">Cancel</a>
 		</form>
@@ -87,29 +84,29 @@
 
 <script>
 	
-	$('.botonD').on('click', function(){
-    	$('.formD').fadeIn().css('display','block');
+	$('.botonA').on('click', function(){
+    	$('.formA').fadeIn().css('display','block');
         
                 
     });
 
     $('.cancel').on('click', function(){
                  //Validation
-        $('.formD').fadeOut().css('display','none');
+        $('.formA').fadeOut().css('display','none');
                 
     });
 
 
 
-	$('.botonMD').on('click', function(){
+	$('.botonMA').on('click', function(){
                  //Validation
-        $('.formMD').fadeIn().css('display','block');
+        $('.formMA').fadeIn().css('display','block');
                 
     });
 
     $('.cancel').on('click', function(){
                  //Validation
-        $('.formMD').fadeOut().css('display','none');
+        $('.formMA').fadeOut().css('display','none');
                 
     });
 
