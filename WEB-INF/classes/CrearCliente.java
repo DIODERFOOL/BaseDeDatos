@@ -74,6 +74,7 @@ public class CrearCliente extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
 		}
 	}
 }

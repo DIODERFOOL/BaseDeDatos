@@ -85,6 +85,7 @@ public class NewTrialServlet extends HttpServlet{
 
 		catch(Exception e){
 			e.printStackTrace();
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
 		}
 	}
 }

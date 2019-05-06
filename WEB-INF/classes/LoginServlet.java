@@ -14,7 +14,7 @@ public class LoginServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
@@ -120,7 +120,7 @@ public class LoginServlet extends HttpServlet{
 
 						ResultSet lawsuitContents = stat.executeQuery("select * from lawsuit join trial on trial_id = TrialId;");
 						Vector<LawsuitQuery> lawsuitList = new Vector<LawsuitQuery>();
-			
+
 						while(lawsuitContents.next()){
 							LawsuitQuery aux = new LawsuitQuery(Long.valueOf(lawsuitContents.getString("LawsuitID")), lawsuitContents.getString("name"), lawsuitContents.getString("affair"), lawsuitContents.getString("address"), Long.valueOf(lawsuitContents.getString("trial_id")), lawsuitContents.getString("location"));
 							lawsuitList.add(aux);
@@ -128,7 +128,7 @@ public class LoginServlet extends HttpServlet{
 
 						ResultSet fileContents = stat.executeQuery("select * from file join lawsuit on lawsuit_id = LawsuitId;");
 						Vector<FileQuery> fileList = new Vector<FileQuery>();
-			
+
 						while(fileContents.next()){
 							FileQuery aux = new FileQuery(Long.valueOf(fileContents.getString("idFile")), fileContents.getString("name"), fileContents.getString("creation_date"), Long.valueOf(fileContents.getString("lawsuit_id")), fileContents.getString("Lawsuit.name"));
 							fileList.add(aux);
@@ -159,7 +159,7 @@ public class LoginServlet extends HttpServlet{
 							if(disp!=null){
 								disp.forward(request,response);
 							}
-						}	
+						}
 					}
 				}
 			}
@@ -175,6 +175,7 @@ public class LoginServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
 		}
 	}
 }

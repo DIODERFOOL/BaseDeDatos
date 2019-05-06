@@ -14,15 +14,15 @@ public class DeleteLawsuitServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}	
+		}
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
-		updateAdmin(request, response);
+			updateAdmin(request, response);
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response){
-		updateAdmin(request, response);
+			updateAdmin(request, response);
 	}
 
 	public void updateAdmin(HttpServletRequest request, HttpServletResponse response){
@@ -63,12 +63,7 @@ public class DeleteLawsuitServlet extends HttpServlet{
 		}
 		catch(Exception e){
 			e.printStackTrace();
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/error.jsp");
 		}
 	}
 }
-
-
-
-
-
-
