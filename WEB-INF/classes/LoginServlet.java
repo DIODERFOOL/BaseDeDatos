@@ -118,6 +118,14 @@ public class LoginServlet extends HttpServlet{
 							clientNamesList2.add(clientName2);
 						}
 
+						ResultSet lawsuitContents = stat.executeQuery("select * from lawsuit join trial on trial_id = TrialId;");
+						Vector<LawsuitQuery> lawsuitList = new Vector<LawsuitQuery>();
+			
+						while(lawsuitContents.next()){
+							LawsuitQuery aux = new LawsuitQuery(Long.valueOf(lawsuitContents.getString("LawsuitID")), lawsuitContents.getString("name"), lawsuitContents.getString("affair"), lawsuitContents.getString("address"), Long.valueOf(lawsuitContents.getString("trial_id")), lawsuitContents.getString("location"));
+							lawsuitList.add(aux);
+						}
+
 						request.setAttribute("clientList",clientList);
 						request.setAttribute("usernameList",usernameList);
 						request.setAttribute("trialList",trialList);
@@ -125,6 +133,7 @@ public class LoginServlet extends HttpServlet{
 						request.setAttribute("employeeList",employeeList);
 						request.setAttribute("trialList2",trialList2);
 						request.setAttribute("clientNamesList2",clientNamesList2);
+						request.setAttribute("lawsuitList", lawsuitList);
 
 						if(userList.get(i).getRole().equals("Super Empleado")){
 							//Super Empleado Login

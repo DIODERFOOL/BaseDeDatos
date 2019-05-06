@@ -250,6 +250,40 @@
 -->
 			<a id="button" class="lowButt2" href="./ShowEmployee">Ver</a>
 		</div>
+		
+		<div id="demanda">
+			<h3>DEMANDAS</h3>
+			<div class="table100 ver2 m-b-110 floatingTable2">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Nombre</th>
+									<th class="cell100 column2">Reclamo</th>
+									<th class="cell100 column2">Dirección de la Demanda</th>
+									<th class="cell100 column2">Locación del Juicio Asociado</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.lawsuitList}" var="lw">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${lw.name}" /></td>
+									<td class="cell100 column1"><c:out value="${lw.affair}" /></td>
+									<td class="cell100 column1"><c:out value="${lw.address}" /></td>
+									<td class="cell100 column1"><c:out value="${lw.trialLocation}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			<a id="button" class="lowButt" href="#">Ver</a>
+		</div>
 
 	</div>
 </body>
