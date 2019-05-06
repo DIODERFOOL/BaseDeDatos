@@ -349,17 +349,28 @@ h3{
 }
 
 .botonC , .botonMC{
+	background-color: transparent;
 	color: #6c7ae0;
 }
 
 .botonME , .botonE{
-	background-color: #222222;
-	color: #00ad5f;
+	background-color: transparent;
+	color: #6c7ae0;
 }
 
 .botonMT , .botonT{
-	background-color: white;
-	color: #fa4251;
+	background-color: transparent;
+	color: #6c7ae0;
+}
+
+.botonMD , .botonD{
+	background-color: transparent;
+	color: #6c7ae0;
+}
+
+.botonMA , .botonA{
+	background-color: transparent;
+	color: #6c7ae0;
 }
 
 .formCM{
