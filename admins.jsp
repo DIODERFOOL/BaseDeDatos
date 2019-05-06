@@ -38,7 +38,7 @@
 		<div id="leftMenu">
 			<div id="clockSpace">
 				<!--<img src="img/blank-avatar.jpg" id="avatar">-->
-				<p>Bienvenido!</p><p>Son las:</p><p class="timeText"></p><p>del</p><p class="dateText"></p>
+				<p>¡Bienvenido!</p><p>Son las:</p><p class="timeText"></p><p>del</p><p class="dateText"></p>
 
 				<!-- <p id="clock"></p> -->
 			</div>
