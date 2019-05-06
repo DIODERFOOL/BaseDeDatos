@@ -44,16 +44,11 @@ public class NewClientServlet extends HttpServlet{
 			String userID = request.getParameter("fkUser");
 			// String password = request.getParameter("addPW");
 			// String role = request.getParameter("addForma");
-
-			ResultSet resfk = stat.executeQuery("SELECT userID FROM users WHERE name LIKE \"" + userID + "\";");
-			int[] tempA = new int[1];
-
-			if ( resfk.next() ) {
-				tempA[0] = resfk.getInt(1);
-				System.out.println(tempA[0]);
-			}
-
-			int fkey = tempA[0];
+			userID = userID.substring(1, userID.length()-1);
+			ResultSet resfk = stat.executeQuery("SELECT userID FROM users WHERE name = \"" + userID + "\";");
+			int fkey = 1;
+			resfk.next();
+			fkey = Integer.valueOf(resfk.getString("userID"));
 
 			//save values in database
 			int res = stat.executeUpdate("insert into client(name, contact, id_User) VALUES (\"" + name + "\", \"" + contact + "\" , \"" + fkey + "\");");
