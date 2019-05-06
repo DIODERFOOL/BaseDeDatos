@@ -35,7 +35,6 @@
             </table>
             <div id="divButts">
                 <a href="regArchivo.html" class="lowButt3">Crear Nuevo</a>
-                <a href="#" class="lowButt3">Modificar</a>
                 <a href="./AdminRefresh" class="lowButt3">Regresar</a>
             </div>
         </div>
