@@ -57,7 +57,7 @@
 
 		<div id="clientes">
 			<h3>CLIENTES</h3>
-			<div class="table100 ver1 m-b-110 floatingTable">
+			<div class="table100 ver1 m-b-10 floatingTable">
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -83,7 +83,7 @@
 					</div>
 				</div>
 
-			<div class="table100 ver3 m-b-110 floatingTable">
+			<div class="table100 ver3 m-b-10 floatingTable">
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -111,7 +111,7 @@
 
 		<div id="juicios">
 			<h3>JUICIOS</h3>
-			<div class="table100 ver2 m-b-110 floatingTable2">
+			<div class="table100 ver2 m-b-10 floatingTable2">
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -137,7 +137,7 @@
 					</div>
 				</div>
 
-			<div class="table100 ver2 m-b-110 floatingTable2">
+			<div class="table100 ver2 m-b-10 floatingTable2">
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -165,7 +165,7 @@
 
 		<div id="empleados">
 			<h3>EMPLEADOS</h3>
-			<div class="table100 ver3 m-b-110 floatingTable3">
+			<div class="table100 ver3 m-b-10 floatingTable3">
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -253,7 +253,7 @@
 		
 		<div id="demanda">
 			<h3>DEMANDAS</h3>
-			<div class="table100 ver2 m-b-110 floatingTable2">
+			<div class="table100 ver2 m-b-10 floatingTable2">
 					<div class="table100-head">
 						<table>
 							<thead>
@@ -287,7 +287,7 @@
 		
 		<div id="archivo">
 			<h3>ARCHIVOS</h3>
-			<div class="table100 ver2 m-b-110 floatingTable2">
+			<div class="table100 ver2 m-b-10 floatingTable2">
 					<div class="table100-head">
 						<table>
 							<thead>
