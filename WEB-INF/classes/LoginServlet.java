@@ -126,6 +126,14 @@ public class LoginServlet extends HttpServlet{
 							lawsuitList.add(aux);
 						}
 
+						ResultSet fileContents = stat.executeQuery("select * from file join lawsuit on lawsuit_id = LawsuitId;");
+						Vector<FileQuery> fileList = new Vector<FileQuery>();
+			
+						while(fileContents.next()){
+							FileQuery aux = new FileQuery(Long.valueOf(fileContents.getString("idFile")), fileContents.getString("name"), fileContents.getString("creation_date"), Long.valueOf(fileContents.getString("lawsuit_id")), fileContents.getString("Lawsuit.name"));
+							fileList.add(aux);
+						}
+
 						request.setAttribute("clientList",clientList);
 						request.setAttribute("usernameList",usernameList);
 						request.setAttribute("trialList",trialList);
@@ -134,6 +142,7 @@ public class LoginServlet extends HttpServlet{
 						request.setAttribute("trialList2",trialList2);
 						request.setAttribute("clientNamesList2",clientNamesList2);
 						request.setAttribute("lawsuitList", lawsuitList);
+						request.setAttribute("fileList", fileList);
 
 						if(userList.get(i).getRole().equals("Super Empleado")){
 							//Super Empleado Login
