@@ -1,4 +1,8 @@
 <!DOCTYPE HTML>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+git 
 <html>
 <head>
     <meta charset="UTF-8">
