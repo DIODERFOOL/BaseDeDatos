@@ -400,3 +400,15 @@ h3{
 .cancel{
 	cursor: pointer;
 }
+
+/*-----------Lupa para buscar-----------------*/
+
+.lupa img{
+	height: 2%;
+	width: 2%;
+	margin-top: 10%;
+	margin-left: 2%;
+}
+
+
+
