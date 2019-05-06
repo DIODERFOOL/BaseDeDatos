@@ -1,3 +1,12 @@
+CREATE USER 'finley'@'localhost'
+IDENTIFIED BY 'password';
+GRANT ALL
+  ON *.*
+  TO 'finley'@'localhost'
+  WITH GRANT OPTION;
+
+CREATE DATABASE  IF NOT EXISTS `abogados` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `abogados`;
 -- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
 --
 -- Host: localhost    Database: abogados
@@ -34,6 +43,15 @@ CREATE TABLE `client` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `client`
+--
+
+LOCK TABLES `client` WRITE;
+/*!40000 ALTER TABLE `client` DISABLE KEYS */;
+/*!40000 ALTER TABLE `client` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `employee`
 --
 
@@ -59,6 +77,15 @@ CREATE TABLE `employee` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `employee`
+--
+
+LOCK TABLES `employee` WRITE;
+/*!40000 ALTER TABLE `employee` DISABLE KEYS */;
+/*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `file`
 --
 
@@ -75,6 +102,15 @@ CREATE TABLE `file` (
   CONSTRAINT `file_ibfk_1` FOREIGN KEY (`lawsuit_id`) REFERENCES `lawsuit` (`LawsuitId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `file`
+--
+
+LOCK TABLES `file` WRITE;
+/*!40000 ALTER TABLE `file` DISABLE KEYS */;
+/*!40000 ALTER TABLE `file` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `lawsuit`
@@ -96,6 +132,15 @@ CREATE TABLE `lawsuit` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `lawsuit`
+--
+
+LOCK TABLES `lawsuit` WRITE;
+/*!40000 ALTER TABLE `lawsuit` DISABLE KEYS */;
+/*!40000 ALTER TABLE `lawsuit` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `trial`
 --
 
@@ -114,6 +159,15 @@ CREATE TABLE `trial` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `trial`
+--
+
+LOCK TABLES `trial` WRITE;
+/*!40000 ALTER TABLE `trial` DISABLE KEYS */;
+/*!40000 ALTER TABLE `trial` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -127,8 +181,22 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL,
   `role` varchar(100) NOT NULL,
   PRIMARY KEY (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'admin','admin','@dm1n','Super Empleado');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'abogados'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -139,4 +207,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-22 19:48:41
+-- Dump completed on 2019-05-06  4:03:09
