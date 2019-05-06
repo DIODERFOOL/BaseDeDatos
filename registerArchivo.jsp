@@ -1,4 +1,8 @@
 <!DOCTYPE HTML>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -14,11 +18,11 @@
     </header>
 
     <section id="start">
-        <form id="form" action="" method="get">
-            <p>Crear Súper Empleado</p>
-            <input type="text" required placeholder="Nombre" class="inp" id="addName">
-            <input type="text" required placeholder="Contacto" class="inp" id="addContacto">
-            <input type="text" placeholder="Forma Jurídica" class="inp" id="addForma">
+        <form id="form" action="./CreateFile" method="post">
+            <p>Crear Archivo</p>
+            <input type="text" required placeholder="Nombre" class="inp" name="addName" id="addName">
+            <input type="date" class="inp" name="addContacto" id="addContacto">
+            <!-- <input type="text" placeholder="Forma Jurídica" class="inp" id="addForma"> -->
             <input type="submit" value="Registrar" id="button">
         </form>
         <div class="reg-error"></div>

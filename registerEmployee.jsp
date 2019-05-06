@@ -1,4 +1,8 @@
 <!doctype>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -7,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
         <link href="css/employeestyle.css" rel ="stylesheet">
 		<script type="text/javascript" src="js/jQuery.js"></script>
-        
+
     </head>
     <body>
 
@@ -21,7 +25,7 @@
             <div class="reg">
                 <!-- <h1>Registrar</h1> -->
             </div>
-                <div class="centrardiv"> 
+                <div class="centrardiv">
                     <form method="post" action="./RegisterEmployee">
                         <input type="text" required placeholder="Nombre" class="inp user" name="addName" id="addName">
                         <input type="text" required placeholder="Usuario" class="inp user" name="addUser" id="addUser">
@@ -40,9 +44,9 @@
                 <div class="reg-error"></div>
             </div>
         </section>
-        
+
        <!--  <script>
-            
+
            $('#button').on('click', function(){
 
                 var error=false;
@@ -85,9 +89,9 @@
                    return false;
            		}
 			   //If no errors, continue
-			   
+
 		   });
-        
+
         </script> -->
     </body>
 </html>

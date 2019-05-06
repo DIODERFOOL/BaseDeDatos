@@ -176,7 +176,7 @@ p .centerText{
 
 /*--------------Centro-------------------*/
 
-#clientes, #juicios, #empleados{
+#clientes, #juicios, #empleados, #demanda, #archivo{
 	width: 84%;
 	background-color: transparent;
 	float: right;
@@ -291,6 +291,16 @@ h3{
 	display: block;
 }
 
+#demandaVer{
+	width: 65%;
+	height: 50%;
+	background-color: transparent;
+	position: absolute;	
+	left: 15%;
+	top:  15%;
+	display: block;
+}
+
 /*----------------Form-------------------*/
 
 .form{
@@ -314,6 +324,12 @@ h3{
 	display: none;
 }
 
+.formD{
+	top: 30%;
+	position: absolute;
+	right: 1%;
+	display: none;
+}
 
 .botonC , .botonMC{
 	color: #6c7ae0;
@@ -344,6 +360,13 @@ h3{
 }
 
 .formMT{
+	top: 30%;
+	position: absolute;
+	right: 10%;
+	display: none;
+}
+
+.formMD{
 	top: 30%;
 	position: absolute;
 	right: 10%;

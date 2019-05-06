@@ -1,4 +1,8 @@
 <!DOCTYPE HTML>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -18,6 +22,11 @@
             <p>Crear Jucio</p>
             <input type="text" required placeholder="Lugar" class="inp" name="addAddress" id="addAddress">
             <input type="date" class="inp" name="addDate" id="addDate">
+            <select class="inp" name="fkUser" id="addForma">
+  						<c:forEach items="${requestScope.clientList}" var="us">
+  	            <option value=" <c:out value="${us.name}" /> "> <c:out value="${us.name}" /> </option>
+  						</c:forEach>
+  	         </select>
             <!-- <input type="text" placeholder="Forma Jurídica" class="inp" id="addForma"> -->
             <input type="submit" value="Registrar" id="button">
         </form>
