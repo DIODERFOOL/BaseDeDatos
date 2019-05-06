@@ -284,6 +284,38 @@
 				</div>
 			<a id="button" class="lowButt" href="#">Ver</a>
 		</div>
+		
+		<div id="archivo">
+			<h3>ARCHIVOS</h3>
+			<div class="table100 ver2 m-b-110 floatingTable2">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">Nombre</th>
+									<th class="cell100 column2">Fecha de Creación</th>
+									<th class="cell100 column2">Demanda Asociada</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<c:forEach items="${requestScope.fileList}" var="fl">
+	  							<tr class="row100 body">
+									<td class="cell100 column1"><c:out value="${fl.name}" /></td>
+									<td class="cell100 column1"><c:out value="${fl.creationDate}" /></td>
+									<td class="cell100 column1"><c:out value="${fl.lawsuitName}" /></td>
+								</tr>
+  								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			<a id="button" class="lowButt" href="#">Ver</a>
+		</div>
 
 	</div>
 </body>
