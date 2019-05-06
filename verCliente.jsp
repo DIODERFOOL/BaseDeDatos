@@ -31,6 +31,15 @@
 		<a href="./AdminRefresh"><img src="img/left_Arrow.png" id="backArrow"></a>
 	</header>
 
+	<div>
+		<a class="lupa"><img src="img/lupa.png"></a>
+	</div>
+
+	<form class="searchC" action="./DeleteClient" method="get">
+			<input type="text" name="nameForSearch" placeholder="Nombre">
+			<input type="submit">
+	</form>
+
 	<div id="clientesVer">
 			<h3>CLIENTES</h3>
 			<div class="table100 ver1 m-b-110 floatingTable">
