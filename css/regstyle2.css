@@ -101,7 +101,7 @@ h1{
     height: 85%;
 }
 
-form, #forTables{
+form, #forTables, #center{
     position: absolute;
     width: 300px;
     height: auto;
@@ -176,6 +176,33 @@ form, #forTables{
     font-size: 20px;
 }
 
+/*------------------------Error Page------------------------------*/
+
+h2{
+    color: red;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+h3{
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+    margin: 10px 0px;
+}
+
+#pasos li{
+    text-align: left;
+    list-style-type: circle;
+    list-style-position: inside;
+    padding: 5px;
+}
+
+
+
+
 
 /*-----------------Cosas Alex View-------------------------------*/
 
@@ -183,7 +210,6 @@ form, #forTables{
     width: 500px;
 
 }
-
 
 /*-----------------Cosas Alex View-------------------------------*/
 
