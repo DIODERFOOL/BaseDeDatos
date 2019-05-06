@@ -51,8 +51,9 @@ public class NewTrialServlet extends HttpServlet{
 			resfk.next();
 			fkey = Integer.valueOf(resfk.getString("CompanyID"));
 
+
 			//save values in the database
-			int res = stat.executeUpdate("insert into trial(location, trialDate, idClient) VALUES (\"" + address + "\", \"" + date + "\", \"" + idClient + "\");");
+			int res = stat.executeUpdate("insert into trial(location, trialDate, idClient) VALUES (\"" + address + "\", \"" + date + "\", \"" + fkey + "\");");
 
 			//!!!!!!---------   DEBUGGING - For class presentation only - Creating a JSP with all registered users example !!!!!!---------
 

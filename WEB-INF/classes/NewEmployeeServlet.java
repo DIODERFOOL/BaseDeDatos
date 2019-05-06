@@ -63,7 +63,7 @@ public class NewEmployeeServlet extends HttpServlet{
 			fkey1 = Integer.valueOf(resfk.getString("CompanyId"));
 
 			//save values in database
-			int res = stat.executeUpdate("insert into employee(name, salary, settlement, admission_date, contractCode, company_role, idTrial, company_id) VALUES (\"" + name + "\", \"" + salary + "\", \"" + settlement + "\", \"" + admissionDate + "\" , \"" + contractCode + "\" , \"" + role + "\",  \"" + idTRial + "\",  \"" + company_id + "\");");
+			int res = stat.executeUpdate("insert into employee(name, salary, settlement, admission_date, contractCode, company_role, idTrial, company_id) VALUES (\"" + name + "\", \"" + salary + "\", \"" + settlement + "\", \"" + admissionDate + "\" , \"" + contractCode + "\" , \"" + role + "\",  \"" + fkey + "\",  \"" + fkey1 + "\");");
 
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 

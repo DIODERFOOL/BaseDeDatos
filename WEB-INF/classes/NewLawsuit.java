@@ -56,7 +56,7 @@ public class NewLawsuit extends HttpServlet{
 			fkey = Integer.valueOf(resfk.getString("TrialId"));
 
 			//save values in database
-			int res = stat.executeUpdate("insert into lawsuit(name, affair, address, trial_id) VALUES (\"" + name + "\", \"" + reclamo + "\", \"" + direccion + "\", \"" + trial_id + "\");");
+			int res = stat.executeUpdate("insert into lawsuit(name, affair, address, trial_id) VALUES (\"" + name + "\", \"" + reclamo + "\", \"" + direccion + "\", \"" + fkey + "\");");
 
 			//!!!!!!---------   DEBUGGING - Creating a JSP with all registered users example !!!!!!---------
 
