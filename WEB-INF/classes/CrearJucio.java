@@ -1,12 +1,12 @@
-/*import java.io.*;
+import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
 import java.util.Vector;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/ShowTrial")
-public class ShowTrialServlet extends HttpServlet{
+@WebServlet("/CrearJuicio")
+public class CrearJucio extends HttpServlet{
 
 	public void init(ServletConfig config){
 		try{
@@ -41,41 +41,39 @@ public class ShowTrialServlet extends HttpServlet{
 			Connection con = DriverManager.getConnection(url,dbusuario,dbpassword);
 			Statement stat = con.createStatement();
 
-			ResultSet trialContents = stat.executeQuery("select * from trial join client on idClient=CompanyId;");
-			Vector<Trial> trialList = new Vector<Trial>();
-			Vector<String> clientNamesList = new Vector<String>();
+      ResultSet res2 = stat.executeQuery("SELECT * FROM client;");
+			Vector<Client> clientList = new Vector<Client>();
 
-			while(trialContents.next()){
-
-				//Date format correction
-				String reformatDate = trialContents.getString("trialDate");
-				//2018-mm-dd -> dd-mm-2018
-				String day = reformatDate.substring(8);
-				String month = reformatDate.substring(5,7);
-				String year =  reformatDate.substring(0,4);
-				reformatDate = day + "/" + month + "/" + year;
-				//Date format correction ends
-
-				Trial aux = new Trial(Long.valueOf(trialContents.getString("TrialID")), trialContents.getString("location"), reformatDate, Long.valueOf(trialContents.getString("idClient")));
-				trialList.add(aux);
-				String clientName = trialContents.getString("name");
-				clientNamesList.add(clientName);
-			}
-
-			request.setAttribute("trialList",trialList);
-			request.setAttribute("clientNamesList",clientNamesList);
-
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("/verJuicio.jsp");
-			if(disp!=null){
-				disp.forward(request,response);
+			while(res2.next()){
+				Client aux = new Client(res2.getLong("companyID"),res2.getString("name"), res2.getString("contact"), res2.getLong("id_User"));
+				clientList.add(aux);
 			}
 
 			stat.close();
 			con.close();
+
+			// //------User register ENDS------
+
+			// //------JSP call forward BEGINS------
+
+			request.setAttribute("clientList",clientList);
+
+
+			RequestDispatcher disp =  getServletContext().getRequestDispatcher("/regJuicio.jsp");
+
+			if(disp!=null){
+				disp.forward(request,response);
+			}
+			//------JSP call forward ENDS ------
+
+
+			//!!!!!!---------   DEBUGGING FINISHES - Creating a JSP with all registered users example !!!!!!---------
+
+			// response.sendRedirect("./index.html?userRegister=1");
 
 		}
 		catch(Exception e){
 			e.printStackTrace();
 		}
 	}
-}*/
+}
