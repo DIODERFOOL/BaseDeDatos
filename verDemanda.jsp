@@ -33,7 +33,7 @@
 
 	<div id="demandaVer">
 			<h3>DEMANDAS</h3>
-			<div class="table100 ver2 m-b-110 floatingTable2">
+			<div class="table100 ver1 m-b-110 floatingTable2">
 					<div class="table100-head">
 						<table>
 							<thead>
