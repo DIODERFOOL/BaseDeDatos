@@ -66,7 +66,7 @@
 					</div>
 				</div>
 
-			<div class="table100 ver3 m-b-110 floatingTable" method="get">
+			<div class="table100 ver1 m-b-110 floatingTable" method="get">
 					<div class="table100-head">
 						<table>
 							<thead>
